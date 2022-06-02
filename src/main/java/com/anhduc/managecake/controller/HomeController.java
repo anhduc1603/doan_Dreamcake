@@ -24,7 +24,7 @@ public class HomeController {
         model.addAttribute("categories",categoryService.getAllCategory());
         model.addAttribute("cartCount", GlobalData.cart.size());
         model.addAttribute("products",productService.getAllProduct());
-         return "/index";
+         return "index";
     }
 
     @GetMapping("/shop")
@@ -32,7 +32,7 @@ public class HomeController {
         model.addAttribute("categories",categoryService.getAllCategory());
         model.addAttribute("products",productService.getAllProduct());
         model.addAttribute("cartCount",GlobalData.cart.size());
-        return "home/shop";
+        return "index";
     }
 
 
@@ -46,9 +46,20 @@ public class HomeController {
 
     @GetMapping("/shop/viewproduct/{id}")
     public String viewProduct(@PathVariable int id, Model model){
+        model.addAttribute("categories",categoryService.getAllCategory());
+        model.addAttribute("product",productService.getProductById(id).get());
+        model.addAttribute("cartCount",GlobalData.cart.size());
+        return "/home/detail";
+
+    }
+
+    @GetMapping("/shop/view/{id}")
+    public String viewProductTest(@PathVariable int id, Model model){
+        model.addAttribute("categories",categoryService.getAllCategory());
         model.addAttribute("product",productService.getProductById(id).get());
         model.addAttribute("cartCount",GlobalData.cart.size());
         return "/home/viewProduct";
+
     }
 
 
