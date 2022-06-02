@@ -13,7 +13,7 @@ import java.util.List;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @NotEmpty
@@ -24,7 +24,7 @@ public class User {
 
     @Column(nullable = false, unique = true)
     @NotEmpty
-        @Email(message = "{enrors.invalid_email}")
+     @Email(message = "{enrors.invalid_email}")
     private String email;
 
     //    @NotEmpty

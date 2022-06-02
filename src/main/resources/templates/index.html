@@ -1,97 +1,1174 @@
-12313123
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" >
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
-          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DREAM CAKE </title>
+    <!-- CSS ================================================== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link th:href="@{/css/timber.scssc18b.css?v=1843}" rel='stylesheet' type='text/css' media='all'/>
+    <link th:href="@{/css/check_outc18b.css?v=1843}" rel='stylesheet' type='text/css' media='all'/>
+    <link th:href="@{/css/custom.css?v=1843}" rel='stylesheet' type='text/css' media='all'/>
+    <link th:href="@{/css/style-cafesuplo.scssc18b.css?v=1843}" rel='stylesheet' type='text/css' media='all'/>
+    <link th:href="@{/css/owl.carouselc18b.css?v=1843}" rel='stylesheet' type='text/css' media='all'/>
+    <link th:href="@{/css/owl.themec18b.css?v=1843}" rel='stylesheet' type='text/css' media='all'/>
+    <link th:href="@{/css/owl.transitionsc18b.css?v=1843}" rel='stylesheet' type='text/css' media='all'/>
+    <link th:href="@{/css/font-awesome.min.css?v=1843}" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script th:src="@{/js/jquery.min.js}" type='text/javascript'></script>
+    <script th:src="@{/js/modernizr.minc18b.js?v=1843}" type='text/javascript'></script>
+    <script th:src="@{/js/owl.carousel.minc18b.js?v=1843}" type='text/javascript'></script>
+    <!--    Test icon-->
+
+
+
+
 </head>
-<body>
+<body id="anh-hoa-bakery-banh-ngot-phap" class="template-index">
+<!-- HEADER -->
+<div th:replace="fragments/header::header"></div>
+<!--HEADER-->
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light" >
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <img th:src="@{/images/logo.png}" src="../../static/images/logo.png" width="auto" height="40" class="d-inline-block align-top" alt=""/>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto"></ul>
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" th:href="@{/}" href="#">home</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" th:href="@{/shop}" href="#">shop</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" sec:authorize="isAnonymous()" th:href="@{/templates/account}" href="#">login</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/logout}" href="#">logout</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" th:href="@{/templates/cart}" href="#">cart</a>
-                </li>
-                <li class="nav-item active">
-                    <span class="nav-link" th:text="${cartCount}">0</span>
-                </li>
-            </ul>
-
-        </div>
+<div id="home-main-slider" class="owl-carousel">
+    <div class="owl-slide owl-slide2">
+        <a href="https://banhngotphap.vn/collections/banh-ngot"><img
+                src="https://theme.hstatic.net/1000313040/1000406925/14/ms_banner_img3.jpg?v=1843"
+                class="img-responsive"/></a>
     </div>
-</nav>
-<div class="container" style="margin-top: 30px">
-    <div class="row">
-        <div class="col-sm-3">
-            <h4>Categories</h4>
-            <ul class="list-group">
-                <a th:href="@{/shop}"><li class="list-group-item">All Products</li></a>
-                <a href="" th:each="category, iStat : ${categories}"
-                   th:href="@{/shop/category/{id}(id=${category.id})}"><li
-                        class="list-group-item" th:text="${category.name}"></li></a>
+    <div class="owl-slide owl-slide3">
+        <a href="https://banhngotphap.vn/collections/banh-petit?page=2"><img
+                src="https://theme.hstatic.net/1000313040/1000406925/14/ms_banner_img3.jpg?v=1843"
+                class="img-responsive"/></a>
+    </div>
+    <div class="owl-slide owl-slide4">
+        <a href="https://banhngotphap.vn/collections/banh-kem-tuoi"><img
+                src="https://theme.hstatic.net/1000313040/1000406925/14/ms_banner_img3.jpg?v=1843"
+                class="img-responsive"/></a>
 
-            </ul>
-        </div>
-        <div class="col-sm-9">
-            <div class="card" style="margin-top: 20px" th:each="product : ${products}">
-                <div class="row no-gutters">
-                    <div class="col-sm-5 d-flex justify-content-center">
+        <div id="owl-slide-content-wrapper4">
+            <div class="grid">
+                <div class="grid__item large--one-half">
+                    <div class="slide-content">
+                        <div class="slide-light-text clearfix">
+                        </div>
+                        <div class="slide-bold-text clearfix">
+                        </div>
+                        <div class="slide-btn">
 
-                        <img class="" height="150px" width="150px"
-                             th:src="@{${'/productImages/' + product.imageName}}"th:alt="${product.name}">
-                    </div>
-                    <div class="col-sm-7 d-flex justify-content-center">
-                        <div class="card-body">
-                            <h5 class="card-title" th:text="${product.name}"></h5>
-                            <h4><span th:text="${product.price}"></span>VND</h4>
-                            <p th:text="${product.description}" >Suresh Dasari is a founder and technical lead developer in tutlane.</p>
-                            <a href="#" th:href="@{/shop/viewproduct/{id}(id=${product.id})}" class="btn btn-primary">View Product</a>
+                            <a href="https://banhngotphap.vn/collections/banh-kem-tuoi" class="slide-btn1">xem
+                                thêm</a>
+                            <a href="#" class="slide-btn2"></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="owl-slide owl-slide5">
+        <a href="pages/he-thong-cua-hang.html"><img th:src="@{/images/ms_banner_img5c18b.jpg?v=1843}"
+                                                    class="img-responsive"/></a>
+        <div id="owl-slide-content-wrapper5">
+            <div class="grid">
+                <div class="grid__item large--one-half">
+                    <div class="slide-content">
+                        <div class="slide-light-text clearfix">
+                        </div>
+                        <div class="slide-bold-text clearfix">
+                        </div>
+                        <div class="slide-btn">
+                            <a href="pages/he-thong-cua-hang.html" class="slide-btn1">xem thêm</a>
+                            <a href="#" class="slide-btn2"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div id="home-main-slidermb" class="owl-carousel slider-mobile">
+    <div class="owl-slide owl-slide2">
+        <a href="blogs/news/anh-hoa-bakery-khai-truong-co-so-12-tai-so-275-ho-tung-mau.html">
+            <img src="https://theme.hstatic.net/1000313040/1000406925/14/ms_banner_img3.jpg?v=1843"
+                 class="img-responsive"/>
+        </a>
+    </div>
+
+    <div class="owl-slide owl-slide3">
+        <a href="#">
+            <img src="https://theme.hstatic.net/1000313040/1000406925/14/ms_banner_img3.jpg?v=1843"
+                 class="img-responsive"/>
+        </a>
+    </div>
+    <div class="owl-slide owl-slide4">
+        <a href="#">
+            <img src="https://theme.hstatic.net/1000313040/1000406925/14/ms_banner_img3.jpg?v=1843"
+                 class="img-responsive"/>
+        </a>
+    </div>
+
+    <div class="owl-slide owl-slide5">
+        <a href="#">
+            <img src="https://theme.hstatic.net/1000313040/1000406925/14/ms_banner_img3.jpg?v=1843"
+                 class="img-responsive"/>
+        </a>
+    </div>
 </div>
 
+<div id="PageContainer" class="is-moved-by-drawer">
+    <main class="main-content" role="main">
+
+        <style>
+            body,
+            html {
+                height: 100%;
+            }
+        </style>
+        <section id="home-products">
+            <div class="wrapper">
+                <div class="inner">
+                    <div class="title-text text-center">
+                        <h3></h3>
+                        <h2>Gateaux Mousse</h2>
+                        <img th:src="@{/images/home_line_collection.png}" alt="">
+                    </div>
+                    <div class="grid-uniform">
+
+                        <!-- foreach here -->
+                        <div class="grid__item large--three-twelfths medium--four-twelfths small--six-twelfths" th:each="product : ${products}">
+                            <div class="product--loop">
+                                <div class="product-img">
+                                    <a th:href="@{/shop/viewproduct/{id}(id=${product.id})}">
+                                        <img alt="CARAMEL AND CHOCOLATE CAKE MOUSSE Vuông"
+                                             th:src="@{${'/productImages/' + product.imageName}}"/>
+                                    </a>
+                                </div>
+                                <div class="product-title text-center">
+                                    <a th:href="@{/shop/viewproduct/{id}(id=${product.id})}" th:text="${product.name}"></a>
+                                    <p>
+                                        CM003
+                                    </p>
+                                </div>
+                                <div class="product-price-actions clearfix">
+                                    <div class="product-price" >
+                                       <a  th:text="${#numbers.formatCurrency(product.price)}"></a><a> VND</a>
+                                    </div>
+                                    <div class="product-actions">
+                                        <a th:href="@{/addToCart/{id}(id = ${product.id})}" class="btn add-to-cart " data-id="1073951018">
+                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- den day-->
+
+                        <div class="grid__item large--three-twelfths medium--four-twelfths small--six-twelfths">
+                            <div class="product--loop">
+                                <div class="product-img">
+                                    <a href="products/caramel-and-chocolate-cake-mousse-vuong.html">
+                                        <img alt="CARAMEL AND CHOCOLATE CAKE MOUSSE Vuông"
+                                             th:src="@{/images/demo_product.png}"/>
+                                    </a>
+                                </div>
+                                <div class="product-title text-center">
+                                    <a href="products/caramel-and-chocolate-cake-mousse-vuong.html">
+                                        CARAMEL AND CHOCOLATE CAKE MOUSSE Vuông
+                                    </a>
+                                    <p>
+                                        CM003
+                                    </p>
+                                </div>
+                                <div class="product-price-actions clearfix">
+                                    <div class="product-price">
+                                        360,000₫
+                                    </div>
+                                    <div class="product-actions">
+
+                                        <button type="button" class="btn add-to-cart " data-id="1073951018"><i
+                                                class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+<!--                        <div class="grid__item large&#45;&#45;three-twelfths medium&#45;&#45;four-twelfths small&#45;&#45;six-twelfths">-->
+<!--                            <div class="product&#45;&#45;loop">-->
+<!--                                <div class="product-img">-->
+
+<!--                                    <a href="products/caramel-and-chocolate-cake-mousse-vuong.html">-->
+<!--                                        <img alt="CARAMEL AND CHOCOLATE CAKE MOUSSE Vuông"-->
+<!--                                             th:src="@{/images/demo_product.png}"/>-->
+<!--                                    </a>-->
+<!--                                </div>-->
+<!--                                <div class="product-title text-center">-->
+<!--                                    <a href="products/caramel-and-chocolate-cake-mousse-vuong.html">-->
+<!--                                        CARAMEL AND CHOCOLATE CAKE MOUSSE Vuông-->
+<!--                                    </a>-->
+<!--                                    <p>-->
+<!--                                        CM003-->
+<!--                                    </p>-->
+<!--                                </div>-->
+<!--                                <div class="product-price-actions clearfix">-->
+<!--                                    <div class="product-price">-->
+<!--                                        360,000₫-->
+<!--                                    </div>-->
+<!--                                    <div class="product-actions">-->
+
+<!--                                        <button type="button" class="btn add-to-cart " data-id="1073951018"><i-->
+<!--                                                class="fa fa-shopping-cart" aria-hidden="true"></i></button>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="grid__item large&#45;&#45;three-twelfths medium&#45;&#45;four-twelfths small&#45;&#45;six-twelfths">-->
+<!--                            <div class="product&#45;&#45;loop">-->
+<!--                                <div class="product-img">-->
+
+<!--                                    <a href="products/caramel-and-chocolate-cake-mousse-vuong.html">-->
+<!--                                        <img alt="CARAMEL AND CHOCOLATE CAKE MOUSSE Vuông"-->
+<!--                                             th:src="@{/images/demo_product.png}"/>-->
+<!--                                    </a>-->
+<!--                                </div>-->
+<!--                                <div class="product-title text-center">-->
+<!--                                    <a href="products/caramel-and-chocolate-cake-mousse-vuong.html">-->
+<!--                                        CARAMEL AND CHOCOLATE CAKE MOUSSE Vuông-->
+<!--                                    </a>-->
+<!--                                    <p>-->
+<!--                                        CM003-->
+<!--                                    </p>-->
+<!--                                </div>-->
+<!--                                <div class="product-price-actions clearfix">-->
+<!--                                    <div class="product-price">-->
+<!--                                        360,000₫-->
+<!--                                    </div>-->
+<!--                                    <div class="product-actions">-->
+
+<!--                                        <button type="button" class="btn add-to-cart " data-id="1073951018"><i-->
+<!--                                                class="fa fa-shopping-cart" aria-hidden="true"></i></button>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="grid__item large&#45;&#45;three-twelfths medium&#45;&#45;four-twelfths small&#45;&#45;six-twelfths">-->
+<!--                            <div class="product&#45;&#45;loop">-->
+<!--                                <div class="product-img">-->
+
+<!--                                    <a href="products/caramel-and-chocolate-cake-mousse-vuong.html">-->
+<!--                                        <img alt="CARAMEL AND CHOCOLATE CAKE MOUSSE Vuông"-->
+<!--                                             th:src="@{/images/demo_product.png}"/>-->
+<!--                                    </a>-->
+<!--                                </div>-->
+<!--                                <div class="product-title text-center">-->
+<!--                                    <a href="products/caramel-and-chocolate-cake-mousse-vuong.html">-->
+<!--                                        CARAMEL AND CHOCOLATE CAKE MOUSSE Vuông-->
+<!--                                    </a>-->
+<!--                                    <p>-->
+<!--                                        CM003-->
+<!--                                    </p>-->
+<!--                                </div>-->
+<!--                                <div class="product-price-actions clearfix">-->
+<!--                                    <div class="product-price">-->
+<!--                                        360,000₫-->
+<!--                                    </div>-->
+<!--                                    <div class="product-actions">-->
+
+<!--                                        <button type="button" class="btn add-to-cart " data-id="1073951018"><i-->
+<!--                                                class="fa fa-shopping-cart" aria-hidden="true"></i></button>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="grid__item large&#45;&#45;three-twelfths medium&#45;&#45;four-twelfths small&#45;&#45;six-twelfths">-->
+<!--                            <div class="product&#45;&#45;loop">-->
+<!--                                <div class="product-img">-->
+
+<!--                                    <a href="products/caramel-and-chocolate-cake-mousse-vuong.html">-->
+<!--                                        <img alt="CARAMEL AND CHOCOLATE CAKE MOUSSE Vuông"-->
+<!--                                             th:src="@{/images/demo_product.png}"/>-->
+<!--                                    </a>-->
+<!--                                </div>-->
+<!--                                <div class="product-title text-center">-->
+<!--                                    <a href="products/caramel-and-chocolate-cake-mousse-vuong.html">-->
+<!--                                        CARAMEL AND CHOCOLATE CAKE MOUSSE Vuông-->
+<!--                                    </a>-->
+<!--                                    <p>-->
+<!--                                        CM003-->
+<!--                                    </p>-->
+<!--                                </div>-->
+<!--                                <div class="product-price-actions clearfix">-->
+<!--                                    <div class="product-price">-->
+<!--                                        360,000₫-->
+<!--                                    </div>-->
+<!--                                    <div class="product-actions">-->
+
+<!--                                        <button type="button" class="btn add-to-cart " data-id="1073951018"><i-->
+<!--                                                class="fa fa-shopping-cart" aria-hidden="true"></i></button>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="grid__item large&#45;&#45;three-twelfths medium&#45;&#45;four-twelfths small&#45;&#45;six-twelfths">-->
+<!--                            <div class="product&#45;&#45;loop">-->
+<!--                                <div class="product-img">-->
+
+<!--                                    <a href="products/caramel-and-chocolate-cake-mousse-vuong.html">-->
+<!--                                        <img alt="CARAMEL AND CHOCOLATE CAKE MOUSSE Vuông"-->
+<!--                                             th:src="@{/images/demo_product.png}"/>-->
+<!--                                    </a>-->
+<!--                                </div>-->
+<!--                                <div class="product-title text-center">-->
+<!--                                    <a href="products/caramel-and-chocolate-cake-mousse-vuong.html">-->
+<!--                                        CARAMEL AND CHOCOLATE CAKE MOUSSE Vuông-->
+<!--                                    </a>-->
+<!--                                    <p>-->
+<!--                                        CM003-->
+<!--                                    </p>-->
+<!--                                </div>-->
+<!--                                <div class="product-price-actions clearfix">-->
+<!--                                    <div class="product-price">-->
+<!--                                        360,000₫-->
+<!--                                    </div>-->
+<!--                                    <div class="product-actions">-->
+
+<!--                                        <button type="button" class="btn add-to-cart " data-id="1073951018"><i-->
+<!--                                                class="fa fa-shopping-cart" aria-hidden="true"></i></button>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="grid__item large&#45;&#45;three-twelfths medium&#45;&#45;four-twelfths small&#45;&#45;six-twelfths">-->
+<!--                            <div class="product&#45;&#45;loop">-->
+<!--                                <div class="product-img">-->
+
+<!--                                    <a href="products/caramel-and-chocolate-cake-mousse-vuong.html">-->
+<!--                                        <img alt="CARAMEL AND CHOCOLATE CAKE MOUSSE Vuông"-->
+<!--                                             th:src="@{/images/demo_product.png}"/>-->
+<!--                                    </a>-->
+<!--                                </div>-->
+<!--                                <div class="product-title text-center">-->
+<!--                                    <a href="products/caramel-and-chocolate-cake-mousse-vuong.html">-->
+<!--                                        CARAMEL AND CHOCOLATE CAKE MOUSSE Vuông-->
+<!--                                    </a>-->
+<!--                                    <p>-->
+<!--                                        CM003-->
+<!--                                    </p>-->
+<!--                                </div>-->
+<!--                                <div class="product-price-actions clearfix">-->
+<!--                                    <div class="product-price">-->
+<!--                                        360,000₫-->
+<!--                                    </div>-->
+<!--                                    <div class="product-actions">-->
+
+<!--                                        <button type="button" class="btn add-to-cart " data-id="1073951018"><i-->
+<!--                                                class="fa fa-shopping-cart" aria-hidden="true"></i></button>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+
+                    </div>
+                    <div class="btn-viewmore-tab text-center">
+                        <a class="btn-remore" href="collections/gateaux-mousse.html">Xem thêm</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- <section id="home-article">
+	<div class="wrapper">
+		<div class="inner">
+			<div class="title-art title-text text-center">
+				<h3>tin tức</h3>
+				<h2>nổi bật nhất trong tuần</h2>
+				<img src="./images/home_line_blogc18b.html?v=1843" alt="">
+			</div>
+			<div class="grid">
+				
+				<div id="owl-home-main-banners-slider-art" class="owl-carousel owl-theme">
+					
+					<div class="grid__item item">
+						<div class="article-item">
+	<div class="article-img">
+		<a href="blogs/news/thong-bao-lich-nghi-tet-nguyen-dan-2022.html">
+			<img src="../file.hstatic.net/1000313040/article/viber_image_2022-01-29_19-56-16-824_59f9291ea9574d43a608c7652710df24_large.png" alt="THÔNG BÁO LỊCH NGHỈ TẾT NGUYÊN ĐÁN 2022">
+		</a>
+		<div class="article-date text-center">
+			<div class="article-day">30</div>
+			<div class="article-month-year">
+				<span>01 /</span>
+				<span>2022</span>
+			</div>
+		</div>
+	</div>
+	<div class="article-title text-center">
+		<a href="blogs/news/thong-bao-lich-nghi-tet-nguyen-dan-2022.html" alt="">THÔNG BÁO LỊCH NGHỈ TẾT NGUYÊN ĐÁN 2022</a>
+	</div>
+	<div class="article-overview text-center">
+		<div class="article-cmt-count">
+			<i class="fa fa-commenting-o" aria-hidden="true"></i> 0 bình luận 
+		</div>
+		<div class="article-author">
+			<i class="fa fa-user" aria-hidden="true"></i> Phan Thi Nga
+		</div>	
+	</div>
+	<div class="article-desc">
+		
+		THÔNG BÁO LỊCH NGHỈ TẾT NGUYÊN ĐÁN 2022  Thân gửi Quý Khách Hàng! Anh Hòa Bakery xin thông báo lịch nghỉ tết nguyên đán Nhâm Dần 2022 các cơ sở như sau: Thời gian nghỉ:  - Shop ...
+		
+	</div>
+</div>
+
+					</div>
+					
+					<div class="grid__item item">
+						<div class="article-item">
+	<div class="article-img">
+		<a href="blogs/news/tong-hop-nhung-chiec-banh-ban-nhat-dinh-phai-thu-khi-den-voi-anh-hoa-b.html">
+			<img src="../file.hstatic.net/1000313040/article/18-19_01d53a1e46a044e3b2670fdcb0ec62b9_large.jpg" alt="TỔNG HỢP NHỮNG CHIẾC BÁNH BẠN NHẤT ĐỊNH PHẢI THỬ KHI ĐẾN VỚI ANH HÒA BAKERY.">
+		</a>
+		<div class="article-date text-center">
+			<div class="article-day">18</div>
+			<div class="article-month-year">
+				<span>01 /</span>
+				<span>2022</span>
+			</div>
+		</div>
+	</div>
+	<div class="article-title text-center">
+		<a href="blogs/news/tong-hop-nhung-chiec-banh-ban-nhat-dinh-phai-thu-khi-den-voi-anh-hoa-b.html" alt="">TỔNG HỢP NHỮNG CHIẾC BÁNH BẠN NHẤT ĐỊNH...</a>
+	</div>
+	<div class="article-overview text-center">
+		<div class="article-cmt-count">
+			<i class="fa fa-commenting-o" aria-hidden="true"></i> 0 bình luận 
+		</div>
+		<div class="article-author">
+			<i class="fa fa-user" aria-hidden="true"></i> Phan Thi Nga
+		</div>	
+	</div>
+	<div class="article-desc">
+		
+		Ngoài việc nổi bật về những chiếc bánh kem tươi, bơ hay mousse, thì tại #Anh_Hòa những chiếc bánh nhỏ xinh kia cũng đã đánh gục, níu chân biết bao nhiêu thực khánh bởi:Đa dạng n...
+		
+	</div>
+</div>
+
+					</div>
+					
+					<div class="grid__item item">
+						<div class="article-item">
+	<div class="article-img">
+		<a href="blogs/news/cach-chon-qua-tet-y-nghia-cho-gia-dinh-doi-tac-nhan-vien.html">
+			<img src="../file.hstatic.net/1000313040/article/4_3c50ffbe19b34393af09a943f9a58089_large.png" alt="Cách chọn quà Tết ý nghĩa cho Gia đình, Đối tác, Nhân viên">
+		</a>
+		<div class="article-date text-center">
+			<div class="article-day">18</div>
+			<div class="article-month-year">
+				<span>01 /</span>
+				<span>2022</span>
+			</div>
+		</div>
+	</div>
+	<div class="article-title text-center">
+		<a href="blogs/news/cach-chon-qua-tet-y-nghia-cho-gia-dinh-doi-tac-nhan-vien.html" alt="">Cách chọn quà Tết ý nghĩa cho Gia...</a>
+	</div>
+	<div class="article-overview text-center">
+		<div class="article-cmt-count">
+			<i class="fa fa-commenting-o" aria-hidden="true"></i> 0 bình luận 
+		</div>
+		<div class="article-author">
+			<i class="fa fa-user" aria-hidden="true"></i> Phan Thi Nga
+		</div>	
+	</div>
+	<div class="article-desc">
+		
+		heo phong tục của người Việt Nam ta, cứ mỗi độ Xuân về thì quà Tết là thứ không thể thiếu. Tuy nhiên, để lựa chọn và mua được những món hộp quà Tết ý nghĩa quả thật không dễ dàn...
+		
+	</div>
+</div>
+
+					</div>
+					
+					<div class="grid__item item">
+						<div class="article-item">
+	<div class="article-img">
+		<a href="blogs/news/qua-tet-sang-cho-nam-moi-ven-toan-xuan-nham-dan-2022.html">
+			<img src="../file.hstatic.net/1000313040/article/key_4522527b4cbd4078b6fca0ac4699be15_large.png" alt="Quà Tết Sang - Cho Năm Mới Vẹn Toàn __________Xuân Nhâm Dần 2022_______">
+		</a>
+		<div class="article-date text-center">
+			<div class="article-day">25</div>
+			<div class="article-month-year">
+				<span>12 /</span>
+				<span>2021</span>
+			</div>
+		</div>
+	</div>
+	<div class="article-title text-center">
+		<a href="blogs/news/qua-tet-sang-cho-nam-moi-ven-toan-xuan-nham-dan-2022.html" alt="">Quà Tết Sang - Cho Năm Mới Vẹn...</a>
+	</div>
+	<div class="article-overview text-center">
+		<div class="article-cmt-count">
+			<i class="fa fa-commenting-o" aria-hidden="true"></i> 0 bình luận 
+		</div>
+		<div class="article-author">
+			<i class="fa fa-user" aria-hidden="true"></i> Phan Thi Nga
+		</div>	
+	</div>
+	<div class="article-desc">
+		
+		Tết đến, Xuân sang ai cũng mong muốn tìm cho mình một món quà tết không chỉ sang trọng mà còn thật ý nghĩa, bởi quà Tết thể hiện sự biết ơn và trân trọng đến ông bà, cha mẹ và n...
+		
+	</div>
+</div>
+
+					</div>
+					
+					<div class="grid__item item">
+						<div class="article-item">
+	<div class="article-img">
+		<a href="blogs/news/merry-christmas-2021-banh-kem-ngon-don-giang-sinh-ve.html">
+			<img src="../file.hstatic.net/1000313040/article/key_fb__1__ccc5d6554db24a3195156cf7fcc7861f_large.png" alt="MERRY CHRISTMAS 2021   Bánh Kem Ngon - Đón Giáng Sinh Về">
+		</a>
+		<div class="article-date text-center">
+			<div class="article-day">13</div>
+			<div class="article-month-year">
+				<span>12 /</span>
+				<span>2021</span>
+			</div>
+		</div>
+	</div>
+	<div class="article-title text-center">
+		<a href="blogs/news/merry-christmas-2021-banh-kem-ngon-don-giang-sinh-ve.html" alt="">MERRY CHRISTMAS 2021   Bánh Kem Ngon...</a>
+	</div>
+	<div class="article-overview text-center">
+		<div class="article-cmt-count">
+			<i class="fa fa-commenting-o" aria-hidden="true"></i> 0 bình luận 
+		</div>
+		<div class="article-author">
+			<i class="fa fa-user" aria-hidden="true"></i> Phan Thi Nga
+		</div>	
+	</div>
+	<div class="article-desc">
+		
+		Tháng 12 đến ai ai cũng nghĩ đến ngày lễ Giáng Sinh , ông già noel, cây thông hay những hộp quà nhỏ xinh.Ngoài ý nghĩa theo đạo Thiên Chúa, Noel là một ngày lễ gia đình, một ngà...
+		
+	</div>
+</div>
+
+					</div>
+					
+					<div class="grid__item item">
+						<div class="article-item">
+	<div class="article-img">
+		<a href="blogs/news/tri-an-ngay-nha-giao-viet-nam-20-11.html">
+			<img src="../file.hstatic.net/1000313040/article/key_900x900_3_aaf08d6ce1d24f8dad72b3aa9a73d6dc_large.png" alt="TRI ÂN NGÀY NHÀ GIÁO VIỆT NAM 20/11">
+		</a>
+		<div class="article-date text-center">
+			<div class="article-day">15</div>
+			<div class="article-month-year">
+				<span>11 /</span>
+				<span>2021</span>
+			</div>
+		</div>
+	</div>
+	<div class="article-title text-center">
+		<a href="blogs/news/tri-an-ngay-nha-giao-viet-nam-20-11.html" alt="">TRI ÂN NGÀY NHÀ GIÁO VIỆT NAM 20/11</a>
+	</div>
+	<div class="article-overview text-center">
+		<div class="article-cmt-count">
+			<i class="fa fa-commenting-o" aria-hidden="true"></i> 0 bình luận 
+		</div>
+		<div class="article-author">
+			<i class="fa fa-user" aria-hidden="true"></i> Phan Thi Nga
+		</div>	
+	</div>
+	<div class="article-desc">
+		
+		TRI ÂN NGÀY NHÀ GIÁO VIỆT NAM 20/11, Tháng 11 - tháng tri ân ngày Nhà giáo Việt Nam 20/11 - đây không chỉ là ngày để các bạn bày tỏ lòng biết ơn công lao dạy dỗ của thầy cô mà đ...
+		
+	</div>
+</div>
+
+					</div>
+					
+					<div class="grid__item item">
+						<div class="article-item">
+	<div class="article-img">
+		<a href="blogs/news/default-handle-7.html">
+			<img src="../file.hstatic.net/1000313040/article/key_800x1200_v4_1fa51a116f49453c99e65635366c1796_large.png" alt="𝑻𝒉𝒂𝒚 𝒍𝒐̛̀𝒊 𝒎𝒖𝒐̂́𝒏 𝒏𝒐́𝒊 - 𝑻𝒓𝒊 𝒂̂𝒏 𝒏𝒖̛̉𝒂 𝒌𝒊𝒂 𝒕𝒉𝒆̂́ 𝒈𝒊𝒐̛́𝒊  💟 𝑴𝒖̛̀𝒏𝒈 𝒏𝒈𝒂̀𝒚 𝒑𝒉𝒖̣ 𝒏𝒖̛̃ 𝑽𝒊𝒆̣̂𝒕 𝑵𝒂𝒎 𝟮𝟬/𝟭𝟬 💟">
+		</a>
+		<div class="article-date text-center">
+			<div class="article-day">16</div>
+			<div class="article-month-year">
+				<span>10 /</span>
+				<span>2021</span>
+			</div>
+		</div>
+	</div>
+	<div class="article-title text-center">
+		<a href="blogs/news/default-handle-7.html" alt="">𝑻𝒉𝒂𝒚 𝒍𝒐̛̀𝒊 𝒎𝒖𝒐̂́𝒏 𝒏𝒐́𝒊 - 𝑻𝒓𝒊 𝒂̂𝒏 𝒏𝒖̛̉𝒂...</a>
+	</div>
+	<div class="article-overview text-center">
+		<div class="article-cmt-count">
+			<i class="fa fa-commenting-o" aria-hidden="true"></i> 0 bình luận 
+		</div>
+		<div class="article-author">
+			<i class="fa fa-user" aria-hidden="true"></i> Phan Thi Nga
+		</div>	
+	</div>
+	<div class="article-desc">
+		
+		Ngày 20/10 là ngày dành riêng cho các chị em phụ nữ Việt Nam. Chọn một món quà tinh tế cho bà, mẹ, vợ hay bạn gái,… vào ngày này sẽ khiến họ cảm thấy hạnh phúc và vui mừng vì sự...
+		
+	</div>
+</div>
+
+					</div>
+					
+					<div class="grid__item item">
+						<div class="article-item">
+	<div class="article-img">
+		<a href="blogs/news/y-nghia-tet-trung-thu-o-viet-nam.html">
+			<img src="../file.hstatic.net/1000313040/article/anhhoa_5135_0724e555add24a36b742c01c9e6c7e5a_large.jpg" alt="Ý Nghĩa Tết Trung Thu Ở Việt Nam">
+		</a>
+		<div class="article-date text-center">
+			<div class="article-day">10</div>
+			<div class="article-month-year">
+				<span>08 /</span>
+				<span>2021</span>
+			</div>
+		</div>
+	</div>
+	<div class="article-title text-center">
+		<a href="blogs/news/y-nghia-tet-trung-thu-o-viet-nam.html" alt="">Ý Nghĩa Tết Trung Thu Ở Việt Nam</a>
+	</div>
+	<div class="article-overview text-center">
+		<div class="article-cmt-count">
+			<i class="fa fa-commenting-o" aria-hidden="true"></i> 0 bình luận 
+		</div>
+		<div class="article-author">
+			<i class="fa fa-user" aria-hidden="true"></i> Hoà Bakery Anh
+		</div>	
+	</div>
+	<div class="article-desc">
+		
+		Sự tích Tết Trung ThuTết Trung Thu thường diễn ra theo âm lịch là ngày rằm tháng 8 hằng năm. Tục vui Tết Trung-Thu đã có từ thời Đường Minh Hoàng bên Trung-Hoa, vào đầu thế kỷ t...
+		
+	</div>
+</div>
+
+					</div>
+					
+					<div class="grid__item item">
+						<div class="article-item">
+	<div class="article-img">
+		<a href="blogs/news/d-4.html">
+			<img src="../file.hstatic.net/1000313040/article/trung-thu-postt__3__4ab890e419eb4800a6693bdd4acb2c5f_large.png" alt="𝐁𝐨̣̂ 𝐒𝐮̛𝐮 𝐓𝐚̣̂𝐩 𝐁𝐚́𝐧𝐡 𝐓𝐫𝐮𝐧𝐠 𝐓𝐡𝐮 𝟐𝟎𝟐𝟏  Đ𝒂̣̂𝒎 Đ𝒂̀ 𝑯𝒖̛𝒐̛𝒏𝒈 𝒗𝒊̣ - 𝑴𝒂̣̆𝒏 𝑴𝒂̀ 𝑻𝒊̀𝒏𝒉 𝑻𝒉𝒂̂𝒏!">
+		</a>
+		<div class="article-date text-center">
+			<div class="article-day">10</div>
+			<div class="article-month-year">
+				<span>08 /</span>
+				<span>2021</span>
+			</div>
+		</div>
+	</div>
+	<div class="article-title text-center">
+		<a href="blogs/news/d-4.html" alt="">𝐁𝐨̣̂ 𝐒𝐮̛𝐮 𝐓𝐚̣̂𝐩 𝐁𝐚́𝐧𝐡 𝐓𝐫𝐮𝐧𝐠 𝐓𝐡𝐮 𝟐𝟎𝟐𝟏 ...</a>
+	</div>
+	<div class="article-overview text-center">
+		<div class="article-cmt-count">
+			<i class="fa fa-commenting-o" aria-hidden="true"></i> 0 bình luận 
+		</div>
+		<div class="article-author">
+			<i class="fa fa-user" aria-hidden="true"></i> Hoà Bakery Anh
+		</div>	
+	</div>
+	<div class="article-desc">
+		
+		𝑇ℎ𝑎́𝑛𝑔 𝑡𝑎́𝑚 𝑡𝑟𝑎̆𝑛𝑔 𝑡𝑟𝑜̀𝑛 𝑇𝑟𝑢𝑛𝑔 𝑡ℎ𝑢 đ𝑒̂́𝑛𝑇𝑟𝑒̉ 𝑒𝑚 𝑡𝑢̛𝑜̛𝑖 𝑐𝑢̛𝑜̛̀𝑖 𝑟𝑢̛𝑜̛́𝑐 𝑘𝑖𝑒̣̂𝑢 𝑣𝑢𝑖Trung Thu là ngày của sum vầy, ấm áp của các th...
+		
+	</div>
+</div>
+
+					</div>
+					
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</section> -->
+
+
+         <section id="home-introduce" class="text-center">
+	<div class="wrapper">
+		<div class="inner">
+			<div class="title-text">
+				<h3>về chúng tôi</h3>
+				<h2>chào mừng bạn đến Anhhoa Bakery</h2>
+				<img src="./images/home_line_introc18b.html?v=1843" alt="">
+			</div>
+			<div class="grid intro-content">
+				<div class="grid__item large--six-twelfths content-img">
+					<div class="intro-img">
+						<a href="blogs/news/profile-anh-hoa-bakery.html"><img th:src="@{/images/introc18b.png?v=1843}" alt="Ảnh về chúng tôi"></a>
+					</div>
+				</div>
+				<div class="grid__item large--six-twelfths">
+					<div class="intro-text">
+						<p class="text-title"><i></i></p>
+						<p class="text-desc"> Dream Cake là thương hiệu bánh ngọt Pháp của công ty cổ phần bánh ngọt Anh Hòa. Được thành lập từ năm 2004 tại con phố Ngõ Trạm, quận Hoàn Kiếm, Hà Nội. Trải qua hơn 15 năm phát triển, đến nay Anh Hòa Bakery đã có 13 cơ sở kinh doanh đặt trên những tuyến phố đông dân cư ở Hà Nội.
+                            Các sản phẩm Anh Hòa Bakery được làm từ các nguyên liệu nhập khẩu của các nước có truyền thống làm bánh như: Newzeland, Mỹ, Pháp, Bỉ. Với hương vị thơm ngon đặc trưng của các loại kem, bơ, sữa, phô mai, hạt hạnh nhân, chocolate... dưới bàn tay khéo léo của những người thợ làm bánh giàu kinh nghiệm.
+                            Quy mô xưởng sản xuất rộng hơn 2000m2 với các thiết bị tiên tiến hiện đại theo tiêu chuẩn ISO 2018, toàn bộ nhà máy được sơn phủ bởi sơn EPOXY đặc biệt. Anh Hòa Bakery luôn mang đến cho khách hàng những sản phẩm chất lượng nhất, đảm bảo tuyệt đối về an toàn vệ sinh thực phẩm.</p>
+
+						<a href="blogs/news/profile-anh-hoa-bakery.html" class="btn">ĐỌC THÊM</a>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+    </main>
+</div>
+
+<script>
+    $('#AddToCardQuickView').on('click', function(e){
+        e.preventDefault();
+        var self = $(this);
+        jQuery.ajax({
+    });
+    var callBack = function (variant, selector) {
+        if (variant) {
+            modal = $('#productQuickView');
+            $('.p-price').html(Haravan.formatMoney(variant.price, "{{amount}}₫"));
+            if(variant.sku){
+                $('#ProductSku').html(variant.sku);
+                $('.product-sku').show();
+            }else{
+                $('.product-sku').hide();
+            }
+            if(variant.compare_at_price - variant.price > 0){
+                $('#PriceSaving').html('(Bạn đã tích kiệm được ' + Haravan.formatMoney(variant.compare_at_price - variant.price, "{{amount}}₫")+')')
+            }else{
+                $('#PriceSaving').html('')
+            }
+            if (variant.compare_at_price > 0)
+                modal.find('del').html(Haravan.formatMoney(variant.compare_at_price, "{{amount}}₫"));
+            else
+                modal.find('del').html('');
+            if (variant.available) {
+                modal.find('.btn-addcart').css('display', 'block');
+                modal.find('.btn-soldout').css('display', 'none');
+                if (variant.featured_image) {
+                    var newImg = variant.featured_image,
+                        el = $('.p-product-image-feature')[0];
+                    Haravan.Image.switchImage(newImg, el, timber.switchImage);
+                }
+                check_variant_quickview = true;
+            }
+            else {
+                modal.find('.btn-addcart').css('display', 'none');
+                modal.find('.btn-soldout').css('display', 'block');
+
+            }
+        }
+        else {
+            modal.find('.btn-addcart').css('display', 'none');
+            modal.find('.btn-soldout').css('display', 'block');
+            check_variant_quickview = false;
+
+        }
+    }
+    var p_select_data = $('.p-option-wrapper').html();
+    var p_zoom = $('.image-zoom').html();
+    var quickViewProduct = function (purl) {
+
+        if ($(window).width() < 680) { window.location = purl; return false; }
+        modal = $('#productQuickView');
+        $.ajax({
+            url: purl + '.js',
+            async: false,
+            success: function (product) {
+                $.each(product.options, function (i, v) {
+                    product.options[i] = v.name;
+                })
+                modal.find('.p-title').html(product.title);
+                modal.find('.p-option-wrapper').html(p_select_data);
+                modal.find('#swatch-quick-view').html('');
+                $('.image-zoom').html(p_zoom);
+                modal.find('.p-url').attr('href', product.url);
+
+                $.each(product.variants, function (i, v) {
+                    modal.find('select#p-select-quickview').append("<option value='" + v.id + "'>" + v.title + ' - ' + v.price + "</option>");
+                })
+                if (product.variants.length == 1 && product.variants[0].title.indexOf('Default') != -1)
+                    $('.p-option-wrapper').hide();
+                else
+                    $('.p-option-wrapper').show();
+                if (product.variants.length == 1 && product.variants[0].title.indexOf('Default') != -1) {
+                    callBack(product.variants[0], null);
+                }
+                else {
+                    new Haravan.OptionSelectors("p-select-quickview", { product: product, onVariantSelected: callBack });
+                    if (product.options.length == 1 && product.options[0].indexOf('Tiêu đề')==-1)
+                        modal.find('.selector-wrapper:eq(0)').prepend('<label>' + product.options[0] + '</label>');
+                    $('.p-option-wrapper select:not(#p-select-quickview)').each(function () {
+                        $(this).wrap('<span class="custom-dropdown custom-dropdown--white"></span>');
+                        $(this).addClass("custom-dropdown__select custom-dropdown__select--white");
+                    });
+                    var filePath = window.file_url.substring(0, window.file_url.lastIndexOf('?'));
+                    var assetUrl = window.asset_url.substring(0, window.asset_url.lastIndexOf('?'));
+
+                    product.options.forEach(function(item){
+
+                    })
+                    var variantSwatch = '';
+                    for(var j = 0; j< product.options.length; j++){
+                        var option_index = j;
+                        var op_index_plus = option_index + 1;
+                        var swatch = product.options[option_index];
+                        variantSwatch += '<div id="variant-swatch-'+ option_index +'-quickview" class="swatch swatch-quick-view clearfix" data-option="option'+ op_index_plus +'" data-option-index="'+ option_index +'">';
+                        variantSwatch += '<div class="header"> '+ product.options[j]+' </div><div class="select-swap">';
+                        var is_color = false;
+                        if(product.options[j] == "Màu sắc" || product.options[j] == "Màu"){
+                            is_color = true;
+                        }
+                        var values = '';
+                        for(var i = 0; i< product.variants.length; i++){
+                            var value = convertToSlug(product.variants[i].options[option_index]); //value handle
+                            var _value = product.variants[i].options[option_index];
+
+                            if(values.indexOf(value) < 0){
+                                values += ',';
+                                values += ',' + value;
+                                values = values.split(',');
+                                if(is_color){
+                                    variantSwatch += '<div data-value="'+_value+'" class="n-sd swatch-element color '+ value;
+
+                                }else{
+                                    variantSwatch += '<div data-value="'+_value+'" class="n-sd swatch-element '+ value;
+                                }
+
+                                if(option_index == 2){
+                                    variantSwatch += 'variant-3">';
+                                }else{
+                                    variantSwatch +='">';
+                                }
+
+                                variantSwatch += '<input class="variant-'+option_index+' input-quickview" id="qv-swatch-'+option_index+'-'+value+'" type="radio" name="option'+op_index_plus+'" value="'+_value+'"';
+                                if(j==0){
+                                    variantSwatch += ' checked/>';
+                                }else{
+                                    variantSwatch += ' />';
+                                }
+
+                                if(is_color){
+                                    var img_url = '';
+                                    if(product.variants[i].featured_image != null){
+                                        img_url = Haravan.resizeImage(product.variants[i].featured_image.src, 'thumb');
+                                    }
+                                    if(img_url !== ''){
+                                        if(img_url.indexOf('noDefaultImage6') < 0){
+                                            variantSwatch += '<label class="'+value+' has-thumb" for="qv-swatch-'+option_index+'-'+value+'" style="background: url('+img_url+') top left no-repeat" >';
+                                        }else{
+                                            variantSwatch += 	'<label class="'+value+' no-thumb" for="qv-swatch-'+option_index+'-'+value+'">';
+                                        }
+                                    }
+                                    variantSwatch +='	<span>'+_value+'</span><img class="crossed-out" src="'+assetUrl+'soldout.png" /><img class="img-check" src="'+assetUrl+'select-pro.png" /></label>';
+
+                                }else{
+                                    variantSwatch += '<label for="qv-swatch-'+option_index+'-'+value+'">'+ _value +'<img class="crossed-out" src="'+assetUrl+'soldout.png" /><img class="img-check" src="'+assetUrl+'select-pro.png" /></label>';
+                                }
+                                //console.log(variantSwatch);
+                                //console.log(product.variants[i])
+                                variantSwatch += '</div>';
+                            }
+                        }
+
+                        variantSwatch += '</div>';
+                        variantSwatch += '</div>';
+                    }
+
+                    modal.find('#swatch-quick-view').html(variantSwatch);
+
+                    callBack(product.variants[0], null);
+                    callFirstVariantQuickView();
+                }
+                if (product.images.length == 0) {
+                    modal.find('.p-product-image-feature').attr('src', '//hstatic.net/0/0/global/noDefaultImage6_large.gif');
+                }
+                else {
+                    $('#p-sliderproduct').remove();
+                    $('.image-zoom').append("<div id='p-sliderproduct'>");
+                    $('#p-sliderproduct').append("<ul class='owl-carousel inline-list'>");
+                    $.each(product.images, function (i, v) {
+                        elem = $('<li class="item">').append('<a href="#" data-image="" data-zoom-image=""><img /></a>');
+                        elem.find('a').attr('data-image', Haravan.resizeImage(v, 'medium'));
+                        elem.find('a').attr('data-zoom-image', Haravan.resizeImage(v, 'large'));
+                        elem.find('img').attr('data-image', Haravan.resizeImage(v, 'medium'));
+                        elem.find('img').attr('data-zoom-image',Haravan.resizeImage(v, 'large'));
+                        elem.find('img').attr('src', Haravan.resizeImage(v, 'small'));
+                        modal.find('.owl-carousel').append(elem);
+                    });
+                    var owl = $('#p-sliderproduct .owl-carousel');
+                    owl.owlCarousel({
+                        items:3,
+                        navigation : true,
+                        navigationText :[navRightText, navLeftText]
+                    });
+                    $('#p-sliderproduct .owl-carousel .owl-item').first().children('.item').addClass('active');
+                    modal.find('.p-product-image-feature').attr('src', Haravan.resizeImage(product.featured_image, 'large') );
+                    $(".modal-footer .btn-readmore").attr('href', purl);
+                }
+            }
+        });
+
+        return false;
+    }
+    $('#productQuickView').on('click', '.item img', function (event) {
+        event.preventDefault();
+        modal = $('#quick-view-modal');
+        modal.find('.p-product-image-feature').attr('src', $(this).attr('data-zoom-image'));
+        modal.find('.item').removeClass('active');
+        $(this).parents('li').addClass('active');
+        return false;
+    });
+
+
+
+    $(function(){
+        $('#close').click(function(){
+            $('#productQuickView .modal-content').css('opacity', '0');
+            $('#productQuickView .modal-content').css('transform', 'translateY(-30px)');
+            $('#productQuickView').css('background-color', 'rgba(0,0,0,0)');
+            setTimeout(function(){
+                $('#productQuickView').hide();
+            }, 500);
+            document.getElementById("form-quick-view").reset();
+        })
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('productQuickView')) {
+                $('#productQuickView .modal-content').css('opacity', '0');
+                $('#productQuickView .modal-content').css('transform', 'translateY(-30px)');
+                $('#productQuickView').css('background-color', 'rgba(0,0,0,0)');
+                setTimeout(function(){
+                    $('#productQuickView').hide();
+                }, 500);
+                document.getElementById("form-quick-view").reset();
+            }
+        }
+    })
+
+
+    $(document).on("click",".quick-view", function(event){
+        event.preventDefault();
+
+        if(!quickViewProduct($(this).attr('data-handle'))){
+            if ($(window).width() > 680) {
+                $('#productQuickView .modal-content').css('opacity', '1');
+                $('#productQuickView').show();
+                $('#productQuickView').css('background-color', 'rgba(0,0,0,0.4)');
+                //	$('#loading').show();
+
+                var images = $("#productQuickView img");
+                var loadedImgNum = 0;
+
+                images.on('load', function(){
+                    loadedImgNum += 1;
+                    if (loadedImgNum == images.length) {
+                        var topPQZ =  ($('#productQuickView').height() - $('.modal-content').height())/2;
+                        //$('#loading').hide();
+                        $('#productQuickView .modal-content').css('opacity', '1');
+                        $('#productQuickView .modal-content').css('transform', 'translateY(0)');
+                        $('#productQuickView .modal-content').css('margin-top', topPQZ - 50);
+                    }
+                });
+            }
+            $('#p-sliderproduct a').on('click', function(evt) {
+                evt.preventDefault();
+                var newImage = $(this).data('zoom-image');
+                $('.p-product-image-feature').attr('src', newImage);
+            });
+        }
+    });
+
+
+    function callFirstVariantQuickView(){
+        var _chage = '';
+        $('#productQuickView .swatch-element[data-value="'+$('.selector-wrapper .single-option-selector').eq(0).val()+'"]').find('input').click();
+        $('#productQuickView .swatch-element[data-value="'+$('.selector-wrapper .single-option-selector').eq(1).val()+'"]').find('input').click();
+        if(swatch_size == 2){
+            var _avi_op1 = '';
+            var _avi_op2 = '';
+            var _count = $('#variant-swatch-1-quickview .swatch-element').size();
+            $('#variant-swatch-0-quickview .swatch-element').each(function(ind,value){
+                var _key = $(this).data('value');
+                var _unavi = 0;
+                $('#productQuickView .single-option-selector').eq(0).val(_key).change();
+                $('#variant-swatch-1-quickview .swatch-element').each(function(i,v){
+                    var _val = $(this).data('value');
+                    $('#productQuickView .single-option-selector').eq(1).val(_val).change();
+                    if(check_variant_quickview == true){
+                        if(_avi_op1 == ''){
+                            _avi_op1 = _key;
+                        }
+                        if(_avi_op2 == ''){
+                            _avi_op2 = _val;
+                        }
+                    }else{
+                        _unavi += 1;
+                    }
+                })
+                if(_unavi == _count){
+                    $('#variant-swatch-0-quickview .swatch-element[data-value = "'+_key+'"]').addClass('soldout');
+                    $('#variant-swatch-0-quickview .swatch-element[data-value = "'+_key+'"]').find('input').attr('disabled','disabled');
+                }
+            })
+            $('#variant-swatch-1-quickview .swatch-element[data-value = "'+_avi_op2+'"] input').click();
+            $('#variant-swatch-0-quickview .swatch-element[data-value = "'+_avi_op1+'"] input').click();
+        }else if(swatch_size == 3){
+            var _avi_op1 = '';
+            var _avi_op2 = '';
+            var _avi_op3 = '';
+            var _size_op2 = $('#variant-swatch-1-quickview .swatch-element').size();
+            var _size_op3 = $('#variant-swatch-2-quickview .swatch-element').size();
+
+            $('#variant-swatch-0-quickview .swatch-element').each(function(ind,value){
+                var _key_va1 = $(this).data('value');
+                var _count_unavi = 0;
+                $('#productQuickView .single-option-selector').eq(0).val(_key_va1).change();
+                $('#variant-swatch-1-quickview .swatch-element').each(function(i,v){
+                    var _key_va2 = $(this).data('value');
+                    var _unavi_2 = 0;
+                    $('#productQuickView .single-option-selector').eq(1).val(_key_va2).change();
+                    $('#variant-swatch-2-quickview .swatch-element').each(function(j,z){
+                        var _key_va3 = $(this).data('value');
+                        $('#productQuickView .single-option-selector').eq(2).val(_key_va3).change();
+                        if(check_variant_quickview == true){
+                            if(_avi_op1 == ''){
+                                _avi_op1 = _key_va1;
+                            }
+                            if(_avi_op2 == ''){
+                                _avi_op2 = _key_va2;
+                            }
+                            if(_avi_op3 == ''){
+                                _avi_op3 = _key_va3;
+                            }
+                        }else{
+                            _unavi_2 += 1;
+                        }
+                    })
+                    if(_unavi_2 == _size_op3){
+                        _count_unavi += 1;
+                    }
+                })
+                if(_size_op2 == _count_unavi){
+                    $('#variant-swatch-0-quickview .swatch-element[data-value = "'+_key_va1+'"]').addClass('soldout');
+                    $('#variant-swatch-0-quickview .swatch-element[data-value = "'+_key_va1+'"]').find('input').attr('disabled','disabled');
+                }
+            })
+            $('#variant-swatch-0-quickview .swatch-element[data-value = "'+_avi_op1+'"] input').click();
+        }
+        var img_ = $('#variant-swatch-0-quickview .swatch-element[data-value = "'+_avi_op1+'"] input').data('img-src');
+    }
+
+</script>
 
 
 
 
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-</body>
-</html>
+
+<script>
+    $(document).ready(function() {
+        $("#home-main-slider").owlCarousel({
+            items: 1,
+            itemsDesktop: [1000, 1],
+            itemsDesktopSmall: [900, 1],
+            itemsTablet: [600, 1],
+            itemsMobile: false,
+            navigation: false,
+            pagination: true,
+            slideSpeed: 300,
+            autoPlay: true,
+            paginationSpeed: 400,
+            navigationText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>']
+        });
+        $("#home-main-slidermb").owlCarousel({
+            items: 1,
+            itemsDesktop: [1000, 1],
+            itemsDesktopSmall: [900, 1],
+            itemsTablet: [600, 1],
+            itemsMobile: false,
+            navigation: false,
+            pagination: true,
+            slideSpeed: 300,
+            autoPlay: true,
+            paginationSpeed: 400,
+            navigationText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>']
+        });
+        $(".owl-home-main-banners-slider-pd").owlCarousel({
+            items: 4,
+            itemsDesktop: [1000, 4],
+            itemsDesktopSmall: [900, 2],
+            itemsTablet: [600, 2],
+            itemsMobile: false,
+            navigation: false,
+            pagination: false,
+            slideSpeed: 300,
+            paginationSpeed: 400,
+            autoPlay: 5000,
+            navigationText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>']
+        });
+        $("#related-products-slider").owlCarousel({
+            items: 4,
+            itemsDesktop: [1000, 4],
+            itemsDesktopSmall: [900, 4],
+            itemsTablet: [768, 4],
+            itemsMobile: [480, 2],
+            navigation: true,
+            pagination: false,
+            slideSpeed: 300,
+            paginationSpeed: 400,
+            navigationText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>']
+        });
+        $("#owl-home-main-banners-slider-art").owlCarousel({
+            items: 3,
+            itemsDesktop: [1000, 3],
+            itemsDesktopSmall: [900, 3],
+            itemsTablet: [768, 2],
+            itemsMobile: [480, 1],
+            navigation: true,
+            pagination: false,
+            slideSpeed: 300,
+            paginationSpeed: 400,
+            autoPlay: 5000,
+            navigationText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>']
+        });
+
+        $("#owl-home-main-banners-slider-ft").owlCarousel({
+            items: 1,
+            itemsDesktop: [1000, 1],
+            itemsDesktopSmall: [900, 1],
+            itemsTablet: [600, 1],
+            itemsMobile: false,
+            navigation: false,
+            pagination: true,
+            slideSpeed: 300,
+            paginationSpeed: 400,
+            autoPlay: 5000,
+            navigationText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>']
+        });
+    });
+</script>
+
+<!-- FOOTER -->
+
+    <div th:replace="fragments/footer::footer"></div>
+<!-- FOOTER -->
