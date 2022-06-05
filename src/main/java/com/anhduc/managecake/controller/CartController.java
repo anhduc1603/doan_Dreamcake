@@ -39,7 +39,7 @@ public class CartController {
     @GetMapping("/checkout")
     public String checkout(Model model){
         model.addAttribute("total",GlobalData.cart.stream().mapToDouble(Product::getPrice).sum());
-        return "/cart/checkout";
+        return "cart/checkout";
     }
 
     @PostMapping ("/receipt")

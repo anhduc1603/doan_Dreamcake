@@ -5,9 +5,11 @@ import com.anhduc.managecake.model.Role;
 import com.anhduc.managecake.model.User;
 import com.anhduc.managecake.reponsitory.RoleReponsitory;
 import com.anhduc.managecake.reponsitory.UserReponsitory;
+import com.anhduc.managecake.service.UserSerivce;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.ServletException;
@@ -25,11 +27,30 @@ public class LoginController {
     @Autowired
     RoleReponsitory roleReponsitory;
 
+    @Autowired
+    UserSerivce userSerivce;
+
     @GetMapping("/login")
     public String login(){
         GlobalData.cart.clear();
         return "/account/login";
     }
+
+    @PostMapping("/loginuser")
+    public String authWithHttpServletRequest(HttpServletRequest request,@ModelAttribute("user") User user) {
+        System.out.println("Authentication User");
+        try {
+            System.out.println(user.getEmail() + user.getPassword());
+            request.login(user.getEmail(), user.getPassword());
+            return "redirect:/shop";
+
+        } catch (ServletException e) {
+            System.out.println(e.getMessage());
+        }
+        return "redirect:/shop";
+    }
+
+
     @GetMapping("/register")
     public String registerGet(){
         return "/account/register";
@@ -47,4 +68,5 @@ public class LoginController {
         request.login(user.getEmail(), password);
         return "redirect:/shop";
     }
+
 }

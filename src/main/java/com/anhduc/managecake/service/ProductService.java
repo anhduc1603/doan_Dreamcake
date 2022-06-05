@@ -31,4 +31,10 @@ public class ProductService {
         return productReponsitory.findAllByCategory_Id(id);
     }
 
+    public List<Product> getAllProductByName(String name){
+        return productReponsitory.findByName(name);
+    }
+
+
+
 }

@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>DREAM CAKE </title>
+    <!-- CSS ================================================== -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link media='all' rel='stylesheet' th:href="@{/css/timber.scssc18b.css?v=1843}" type='text/css'/>
+    <link media='all' rel='stylesheet' th:href="@{/css/check_outc18b.css?v=1843}" type='text/css'/>
+    <link media='all' rel='stylesheet' th:href="@{/css/style-cafesuplo.scssc18b.css?v=1844}" type='text/css'/>
+    <link th:href="@{/css/custom.css?v=1843}" rel='stylesheet' type='text/css' media='all'/>
+    <link media='all' rel='stylesheet' th:href="@{/css/owl.carouselc18b.css?v=1843}" type='text/css'/>
+    <link media='all' rel='stylesheet' th:href="@{/css/owl.themec18b.css?v=1843}" type='text/css'/>
+    <link media='all' rel='stylesheet' th:href="@{/css/owl.transitionsc18b.css?v=1843}" type='text/css'/>
+    <link crossorigin="anonymous" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+          rel="stylesheet" th:href="@{/css/font-awesome.min.css?v=1843}">
+    <script th:src="@{/js/jquery.min.js}" type='text/javascript'></script>
+    <script th:src="@{/js/modernizr.minc18b.js?v=1843}" type='text/javascript'></script>
+    <script th:src="@{/js/owl.carousel.minc18b.js?v=1843}" type='text/javascript'></script>
+</head>
+<body>
+
+<!-- HEADER -->
+<div th:replace="fragments/header::header"></div>
+<!--HEADER-->
+
+<!--Image bottom header-->
+<section class="breadcrumb-w-img" id="breadcrumb-wrapper">
+    <div class="breadcrumb-overlay"></div>
+    <div class="breadcrumb-content">
+        <div class="wrapper">
+            <div class="inner text-center">
+                <div class="breadcrumb-big">
+                    <h2 th:text="${product.name}">
+                        CARAMEL AND CHOCOLATE CAKE MOUSSE Vuông
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Image bottom header-->
+
+
+<!--Detail-->
+
+<div id="PageContainer" class="is-moved-by-drawer">
+    <main class="main-content" role="main">
+
+<!--        Chi tiet-->
+        <div class="product-main-content">
+            <div class="wrapper">
+                <div class="inner">
+                    <div itemscope itemtype="http://schema.org/Product">
+                        <meta itemprop="url"
+                              content="https://anhhoabakery.vn/products/caramel-and-chocolate-cake-mousse-vuong">
+                        <meta itemprop="image"
+                              content="//product.hstatic.net/1000313040/product/46_f61bb0e4ff004341a14a6615444b3970_grande.png">
+                        <div class="grid">
+                            <div class="grid__item large--four-twelfths text-center">
+                                <div class="product-single__photos">
+                                    <div id="ProductPhoto" class="owl-carousel owl-enable" data-slide="1"
+                                         data-pagination="false" data-nav="true">
+
+                                        <li>
+                                            <a class="image-resize">
+                                                <img  src="http://localhost:8088/images/demo_product.png"
+                                                     alt="CARAMEL AND CHOCOLATE CAKE MOUSSE Vuông" />
+                                            </a>
+                                        </li>
+                                    </div>
+                                </div>
+
+                                <ul class="product-single__thumbnails inline-list" id="ProductThumbs"
+                                    data-nav="false">
+                                    <div class="inner">
+                                        <div class="owldemo4-wrapper ">
+                                            <div id="owl-demo4" class="owl-carousel owl-enable boxi-owl"
+                                                 data-items="4" data-pagination="false" data-desktop="[1240, 3]"
+                                                 data-mobile="[768, 3]">
+                                                <li class="thumbnail-item item">
+                                                    <a href="../../product.hstatic.net/1000313040/product/46_f61bb0e4ff004341a14a6615444b3970_master.png"
+                                                       class=" thumbnail-resize product-single__thumbnail"
+                                                       data-pos="0">
+                                                        <img src="../../product.hstatic.net/1000313040/product/46_f61bb0e4ff004341a14a6615444b3970_small.png"
+                                                             alt="CARAMEL AND CHOCOLATE CAKE MOUSSE Vuông">
+                                                    </a>
+                                                </li>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </div>
+                            <div class="grid__item large--eight-twelfths product-page">
+                                <div class="product--page-content">
+                                    <h1 itemprop="name" th:text="${product.name}">CARAMEL AND CHOCOLATE CAKE MOUSSE Vuông</h1>
+                                    <p class="product-more-info">
+                                            <span class="product-sku">
+                                                Mã sản phẩm: <span id="ProductSku" class="ProductSku"
+                                                                   itemprop="SKU">CM003</span></span>
+                                    </p>
+                                    <hr>
+                                    <div class="product-info grid">
+                                        <div class="grid__item one-whole">
+                                            <p class="line-price">
+                                                <span class="">Giá</span>
+                                                <span id="ProductPrice" class="ProductPrice" itemprop="price"
+                                                      th:text="${#numbers.formatCurrency(product.price)}"></span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <form action="" method="get"
+                                          enctype="multipart/form-data" id="AddToCartForm" class="form-vertical">
+                                        <select name="id" id="productSelect" class="product-single__variants hide">
+                                            <option selected="selected" data-sku="CM003" value="1073951018">20 x 20
+                                                cm - 360,000 VND</option>
+                                        </select>
+                                        <div id="product-select-watch" class="select-swatch">
+                                        </div>
+                                        <div class="product-quantity clearfix">
+                                            <div class="qty-addcart clearfix">
+                                                <span>Số lượng&nbsp; </span>
+                                                <input type="number" name="quantity" id="quantity" min="1" max="10"/>
+                                            </div>
+                                        </div>
+                                        <div class="product-actions">
+                                            <a type="submit" name="add" id="AddToCart"
+                                                    th:href="@{/addToCart/{id}(id = ${product.id})}"
+                                                    class="btnAddtocart">Thêm vào giỏ hàng</a>
+                                            <button type="button" name="buy" id="buy-now" class="btnBuynow">Mua ngay</button>
+                                        </div>
+                                    </form>
+                                    <div id="product-single-details" itemprop="offers" itemscope
+                                         itemtype="http://schema.org/Offer">
+                                        <meta itemprop="priceCurrency" content="VND">
+                                        <link itemprop="availability" href="http://schema.org/InStock">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content2">
+                            <div class="product-tabs">
+                                <div class="tab">
+                                    <button class="tablinks" onclick="openTab(event, 'product-long-description')"
+                                            id="defaultOpen">
+                                        Mô tả chung
+                                    </button>
+                                    <button class="tablinks" onclick="openTab(event, 'product-comments')">Bình
+                                        luận</button>
+                                </div>
+                                <div class="content-product-tab">
+                                    <div id="product-long-description" class="tabcontent" itemprop="description">
+                                        <p>(*) KÍCH THƯỚC BÁNH: 20 x 20 CM</p>
+                                        <p th:text="${product.description}"></p>
+                                    </div>
+                                    <div id="product-comments" class="tabcontent">
+                                        <div class="fb-comments" data-width="100%"
+                                             data-href="caramel-and-chocolate-cake-mousse-vuong.html"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--Chi tiet-->
+        <section id="related-products">
+            <div class="wrapper">
+                <div class="inner">
+                    <div class="home-section-head text-center title-text clearfix">
+                        <h3>Có thể bạn thích</h3>
+                        <h2>Sản phẩm cùng loại</h2>
+                        <img src="../../theme.hstatic.net/1000313040/1000406925/14/product_details_linec18b.png?v=1843"
+                             alt="">
+                    </div>
+
+<!--                    San pham co ththe thich-->
+                    <div class="home-section-body">
+                        <div class="grid">
+                            <div id="related-products-slider" class="owl-carousel owl-theme">
+                                <div class="grid__item item">
+                                    <div class="product--loop">
+                                        <div class="product-img">
+                                            <a href="caramel-chocolate-mousse-3.html">
+                                                <img alt="CARAMEL CHOCOLATE MOUSSE 2"
+                                                     src="../../product.hstatic.net/1000313040/product/26_15a189c9298340a4b91051d5a8656b88_large.png">
+                                            </a>
+                                        </div>
+                                        <div class="product-title text-center">
+                                            <a href="caramel-chocolate-mousse-3.html">
+                                                CARAMEL CHOCOLATE MOUSSE 2
+                                            </a>
+                                            <p>
+                                                CM007
+                                            </p>
+                                        </div>
+                                        <div class="product-price-actions clearfix">
+                                            <div class="product-price">
+                                                330,000₫
+                                            </div>
+                                            <div class="product-actions">
+
+                                                <button type="button" class="btn add-to-cart "
+                                                        data-id="1073951309"><i class="fa fa-shopping-cart"
+                                                                                aria-hidden="true"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="grid__item item">
+                                    <div class="product--loop">
+                                        <div class="product-img">
+                                            <a href="caramel-coconut-cake-mousse-2.html">
+                                                <img alt="CARAMEL COCONUT CAKE MOUSSE 2"
+                                                     src="../../product.hstatic.net/1000313040/product/23_1ef691056040449e83b79127ced13b31_large.png">
+                                            </a>
+                                        </div>
+                                        <div class="product-title text-center">
+                                            <a href="caramel-coconut-cake-mousse-2.html">
+                                                CARAMEL COCONUT CAKE MOUSSE 2
+                                            </a>
+                                            <p>
+                                                CM009
+                                            </p>
+                                        </div>
+                                        <div class="product-price-actions clearfix">
+                                            <div class="product-price">
+                                                330,000₫
+                                            </div>
+                                            <div class="product-actions">
+
+                                                <button type="button" class="btn add-to-cart "
+                                                        data-id="1073951390"><i class="fa fa-shopping-cart"
+                                                                                aria-hidden="true"></i></button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="grid__item item">
+
+                                    <div class="product--loop">
+                                        <div class="product-img">
+
+                                            <a href="caramel-coconut-cake-mousse-vuong.html">
+                                                <img alt="CARAMEL COCONUT CAKE MOUSSE vuông"
+                                                     src="../../product.hstatic.net/1000313040/product/48_2c233d4b75fd4d1d9b1115d9e396be13_large.png">
+                                            </a>
+                                        </div>
+                                        <div class="product-title text-center">
+                                            <a href="caramel-coconut-cake-mousse-vuong.html">
+                                                CARAMEL COCONUT CAKE MOUSSE vuông
+                                            </a>
+                                            <p>
+                                                CM004
+                                            </p>
+                                        </div>
+                                        <div class="product-price-actions clearfix">
+                                            <div class="product-price">
+                                                360,000₫
+                                            </div>
+                                            <div class="product-actions">
+
+                                                <button type="button" class="btn add-to-cart "
+                                                        data-id="1073951082"><i class="fa fa-shopping-cart"
+                                                                                aria-hidden="true"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="grid__item item">
+
+                                    <div class="product--loop">
+                                        <div class="product-img">
+
+
+                                            <a href="chocolate-matcha-cake-mousse-3.html">
+                                                <img alt="CHOCOLATE MATCHA CAKE MOUSSE 2"
+                                                     src="../../product.hstatic.net/1000313040/product/27__1__1e092fb73cab48f2a55e73efbafcb1a3_large.png">
+                                            </a>
+                                        </div>
+                                        <div class="product-title text-center">
+                                            <a href="chocolate-matcha-cake-mousse-3.html">
+                                                CHOCOLATE MATCHA CAKE MOUSSE 2
+                                            </a>
+                                            <p>
+                                                CM010
+                                            </p>
+                                        </div>
+                                        <div class="product-price-actions clearfix">
+                                            <div class="product-price">
+                                                330,000₫
+                                            </div>
+                                            <div class="product-actions">
+
+                                                <button type="button" class="btn add-to-cart "
+                                                        data-id="1077624702"><i class="fa fa-shopping-cart"
+                                                                                aria-hidden="true"></i></button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="grid__item item">
+                                    <div class="product--loop">
+                                        <div class="product-img">
+
+
+                                            <a href="chocolate-matcha-cake-mousse-vuong.html">
+                                                <img alt="CHOCOLATE MATCHA CAKE MOUSSE VUÔNG"
+                                                     src="../../product.hstatic.net/1000313040/product/44_3ab8534ef98d4e90891564170606fb6b_large.png">
+                                            </a>
+                                        </div>
+                                        <div class="product-title text-center">
+                                            <a href="chocolate-matcha-cake-mousse-vuong.html">
+                                                CHOCOLATE MATCHA CAKE MOUSSE VUÔNG
+                                            </a>
+                                            <p>
+                                                CM001
+                                            </p>
+                                        </div>
+                                        <div class="product-price-actions clearfix">
+                                            <div class="product-price">
+                                                360,000₫
+                                            </div>
+                                            <div class="product-actions">
+
+                                                <button type="button" class="btn add-to-cart "
+                                                        data-id="1073950995"><i class="fa fa-shopping-cart"
+                                                                                aria-hidden="true"></i></button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+                                </div>
+
+
+
+
+
+                                <div class="grid__item item">
+
+
+
+
+
+
+
+
+
+
+
+                                    <div class="product--loop">
+                                        <div class="product-img">
+
+
+                                            <a href="passion-cake-mousse-2.html">
+                                                <img alt="PASSION CAKE MOUSSE 2"
+                                                     src="../../product.hstatic.net/1000313040/product/47_1a30f56ae9cf42178a68b60b3c51ea6d_large.png">
+                                            </a>
+                                        </div>
+                                        <div class="product-title text-center">
+                                            <a href="passion-cake-mousse-2.html">
+                                                PASSION CAKE MOUSSE 2
+                                            </a>
+                                            <p>
+                                                CM006
+                                            </p>
+                                        </div>
+                                        <div class="product-price-actions clearfix">
+                                            <div class="product-price">
+                                                330,000₫
+                                            </div>
+                                            <div class="product-actions">
+
+                                                <button type="button" class="btn add-to-cart "
+                                                        data-id="1073951027"><i class="fa fa-shopping-cart"
+                                                                                aria-hidden="true"></i></button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+                                </div>
+
+
+
+
+
+                                <div class="grid__item item">
+
+
+
+
+
+
+
+
+
+
+
+                                    <div class="product--loop">
+                                        <div class="product-img">
+
+
+                                            <a href="passion-cake-mousse-vuong.html">
+                                                <img alt="PASSION CAKE MOUSSE VUÔNG"
+                                                     src="../../product.hstatic.net/1000313040/product/45_21544a1333344544a25f375a386089e7_large.png">
+                                            </a>
+                                        </div>
+                                        <div class="product-title text-center">
+                                            <a href="passion-cake-mousse-vuong.html">
+                                                PASSION CAKE MOUSSE VUÔNG
+                                            </a>
+                                            <p>
+                                                CM002
+                                            </p>
+                                        </div>
+                                        <div class="product-price-actions clearfix">
+                                            <div class="product-price">
+                                                360,000₫
+                                            </div>
+                                            <div class="product-actions">
+
+                                                <button type="button" class="btn add-to-cart "
+                                                        data-id="1073951002"><i class="fa fa-shopping-cart"
+                                                                                aria-hidden="true"></i></button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                                <div class="grid__item item">
+
+                                    <div class="product--loop">
+                                        <div class="product-img">
+                                            <a href="tiramisu-cake-mousse.html">
+                                                <img alt="TIRAMISU CAKE MOUSSE"
+                                                     src="../../product.hstatic.net/1000313040/product/25_897b99e6b9b94829a5e63a74521b641d_large.png">
+                                            </a>
+                                        </div>
+                                        <div class="product-title text-center">
+                                            <a href="tiramisu-cake-mousse.html">
+                                                TIRAMISU CAKE MOUSSE
+                                            </a>
+                                            <p>
+                                                CM008
+                                            </p>
+                                        </div>
+                                        <div class="product-price-actions clearfix">
+                                            <div class="product-price">
+                                                330,000₫
+                                            </div>
+                                            <div class="product-actions">
+
+                                                <button type="button" class="btn add-to-cart "
+                                                        data-id="1073951378"><i class="fa fa-shopping-cart"
+                                                                                aria-hidden="true"></i></button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div></div></div>
+        </section>
+
+        <script src='../../hstatic.net/0/0/global/option_selection.js' type='text/javascript'></script>
+        <script>
+            var selectCallback = function (variant, selector) {
+                timber.productPage({
+                    money_format: "{{amount}}₫",
+                    variant: variant,
+                    selector: selector
+                });
+            };
+
+            jQuery(function ($) {
+                new Haravan.OptionSelectors('productSelect', {
+                    product: { "available": true, "compare_at_price_max": 0.0, "compare_at_price_min": 0.0, "compare_at_price_varies": false, "compare_at_price": 0.0, "content": null, "description": "<p>(*) KÍCH THƯỚC BÁNH: 20 x 20 CM</p><p>THÀNH PHẦN CHÍNH :<br>- GATO&nbsp;<br>- &nbsp;CARAMEL SOCOLA&nbsp;<br>BÁNH ĐƯỢC LÀM TỪ 3 LỚP GATO KẾT HỢP VỚI LỚP CREAM CHEESE, CHANH LEO và CHOCOLATE . PHỦ MẶT BÁNH 1 LỚP SỐT CARAMEL VÀ TRANG TRÍ HOA QUẢ.</p>", "featured_image": "https://product.hstatic.net/1000313040/product/46_f61bb0e4ff004341a14a6615444b3970.png", "handle": "caramel-and-chocolate-cake-mousse-vuong", "id": 1033596839, "images": ["https://product.hstatic.net/1000313040/product/46_f61bb0e4ff004341a14a6615444b3970.png"], "options": ["Kích thước"], "price": 36000000.0, "price_max": 36000000.0, "price_min": 36000000.0, "price_varies": false, "tags": [], "template_suffix": null, "title": "CARAMEL AND CHOCOLATE CAKE MOUSSE Vuông", "type": "Khác", "url": "/products/caramel-and-chocolate-cake-mousse-vuong", "pagetitle": "CARAMEL AND CHOCOLATE CAKE MOUSSE Vuông", "metadescription": "THÀNH PHẦN CHÍNH :- GATO - CREAM CHEESE , CARAMEL SOCOLA BÁNH ĐƯỢC LÀM TỪ 3 LỚP GATO KẾT HỢP VỚI LỚP CREAM CHEESE, CHANH LEO và CHOCOLATE . PHỦ MẶT BÁNH 1 LỚP SỐT CARAMEL VÀ TRANG TRÍ HOA QUẢ.", "variants": [{ "id": 1073951018, "barcode": null, "available": true, "price": 36000000.0, "sku": "CM003", "option1": "20 x 20 cm", "option2": "", "option3": "", "options": ["20 x 20 cm"], "inventory_quantity": -40, "old_inventory_quantity": -40, "title": "20 x 20 cm", "weight": 0.0, "compare_at_price": 0.0, "inventory_management": "haravan", "inventory_policy": "continue", "selected": false, "url": null, "featured_image": null }], "vendor": "Anh Hoa Bakery", "published_at": "2021-05-31T13:12:38.979Z", "created_at": "2021-05-31T13:14:35.861Z", "not_allow_promotion": false },
+                    onVariantSelected: selectCallback,
+                    enableHistoryState: false
+                });
+
+                $('.selector-wrapper:eq(0)').prepend('<label for="productSelect-option-0">K&#237;ch thước</label>');
+
+            });
+            function openTab(evt, tabName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(tabName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+            //openTab(event, 'product-long-description')
+            // Get the element with id="defaultOpen" and click on it
+            document.getElementById("defaultOpen").click();
+
+            $(function() {
+                $(".js-qty__num").keypress(function(event) {
+                    if (event.which != 8 && event.which != 0 && (event.which < 48 || event.which > 57)) {
+                        return false;
+                    }
+                });
+            });
+
+        </script>
+    </main>
+</div>
+
+<!--Detail-->
+
+
+<!-- FOOTER -->
+<div th:replace="fragments/footer::footer"></div>
+<!-- FOOTER -->
+</body>
+</html>
