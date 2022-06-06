@@ -249,7 +249,7 @@
                                                         <a href="blogs/news.html">Tin tức </a>
                                                     </li>
                                                     <li class=" ">
-                                                        <a href="blogs/khuyen-mai.html">Khuyến mại </a>
+                                                        <a th:href="@{/shop/khuyenmai}">Khuyến mại </a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -323,7 +323,8 @@
                         <form action="" method=""
                               class="input-group search-bar home-search-bar" role="search">
                             <input type="hidden" >
-                            <input type="search" th:action="@{/product/search}"
+                            <input type="search"
+                                   th:action="@{/product/search}"
                                    name="name" placeholder="Tìm kiếm..."
                                    class="input-group-field" aria-label="Tìm kiếm...">
                             <span class="input-group-btn">

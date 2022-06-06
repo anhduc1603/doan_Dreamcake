@@ -77,10 +77,15 @@ public class HomeController {
             list = productService.getAllProductByName(name);
         }else {
             list = productService.getAllProduct();
+
         }
         model.addAttribute("product",list);
-        return "/index";
+        return "/home/searchresult";
     }
 
+    @GetMapping("/shop/khuyenmai")
+    public String khuyenMai(){
+        return "/home/khuyenmai";
+    }
 
 }
