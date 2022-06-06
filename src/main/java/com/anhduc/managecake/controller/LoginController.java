@@ -9,7 +9,6 @@ import com.anhduc.managecake.service.UserSerivce;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.ServletException;
@@ -31,7 +30,7 @@ public class LoginController {
     UserSerivce userSerivce;
 
     @GetMapping("/login")
-    public String login(){
+    public String login(    ){
         GlobalData.cart.clear();
         return "/account/login";
     }
@@ -65,7 +64,7 @@ public class LoginController {
         roles.add(roleReponsitory.findById(1).get());
         user.setRoles(roles);
         userReponsitory.save(user);
-        request.login(user.getEmail(), password);
+//        request.login(user.getEmail(), password);
         return "redirect:/shop";
     }
 

@@ -38,6 +38,7 @@ public class CartController {
 
     @GetMapping("/checkout")
     public String checkout(Model model){
+        model.addAttribute("cart",GlobalData.cart);
         model.addAttribute("total",GlobalData.cart.stream().mapToDouble(Product::getPrice).sum());
         return "cart/checkout";
     }
