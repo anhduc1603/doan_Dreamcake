@@ -2,11 +2,14 @@ package com.anhduc.managecake.controller;
 
 import com.anhduc.managecake.global.GlobalData;
 import com.anhduc.managecake.model.Product;
+import com.anhduc.managecake.model.User;
 import com.anhduc.managecake.reponsitory.UserReponsitory;
 import com.anhduc.managecake.service.CategoryService;
 import com.anhduc.managecake.service.ProductService;
 import com.anhduc.managecake.service.UserSerivce;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
@@ -24,6 +27,8 @@ public class HomeController {
     @Autowired
     ProductService productService;
 
+    @Autowired
+    UserSerivce userSerivce;
 
 
     //Cần xem xét
@@ -40,6 +45,8 @@ public class HomeController {
         model.addAttribute("categories",categoryService.getAllCategory());
         model.addAttribute("products",productService.getAllProduct());
         model.addAttribute("cartCount",GlobalData.cart.size());
+        String contex =  SecurityContextHolder.getContext().getAuthentication().getName();
+        model.addAttribute("user",contex);
         return "index";
     }
 

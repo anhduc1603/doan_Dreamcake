@@ -4,14 +4,14 @@ import lombok.Data;
 
 @Data
 public class Checkout {
-    private String firstName;
-    private String lastName;
-    private String address1;
-    private String address2;
-    private String zipCode;
-    private String city;
-    private String phone;
+    private String fullName;
     private String email;
+    private String phone;
+    private String city;
+    private String district;
+    private String address;
     private String note;
+
+
 
 }

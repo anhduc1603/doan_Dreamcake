@@ -2,7 +2,7 @@
         xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
 ></script>
 
-<div id="NavDrawer" class="drawer drawer--left"  >
+<div id="NavDrawer" class="drawer drawer--left"  th:object="@{user}" >
     <div class="drawer__header">
         <div class="drawer__title h3"><img src="//theme.hstatic.net/1000313040/1000406925/14/dream.png"
                                            alt="ANH HOA BAKERY - Bánh ngọt Pháp"/></div>
@@ -166,12 +166,12 @@
                                 <i class="fa fa-phone" aria-hidden="true"></i>
                                 <span>0333.814.222</span>
                             </a>
-                            <a href="pages/he-thong-cua-hang.html">
-                                <i class="fa fa-building" aria-hidden="true"></i>
-                                <span>Hệ thống <b>14</b> cửa hàng</span>
-                            </a>
 
-                            <a th:href="@{/login}"><i class="fa fa-user" aria-hidden="true" ></i> Tài khoản</a>
+<!-- -->
+                            <a><i class="fa fa-user" aria-hidden="true" ></i >
+<!--                             th:text="${#authentication.getPrincipal()}.getUsername()"-->
+                                Xin Chào,
+                                <span th:text="${user}">Tài Khoản</span></a>
 
                             <a th:href="@{/login}"><i class="fa fa-user" aria-hidden="true"  ></i> Đăng Xuất</a>
 
@@ -345,13 +345,9 @@
                     </div>
                     <div class="grid__item medium--one-whole small--one-whole">
                         <div class="fix-hd">
-                            <a href="tel:0961452578">
+                            <a href="tel:0333814222">
                                 <i class="fa fa-phone" aria-hidden="true"></i>
-                                <span>0961452578</span>
-                            </a>
-                            <a href="pages/he-thong-cua-hang.html">
-                                <i class="fa fa-building" aria-hidden="true"></i>
-                                <span>Hệ thống <b>14</b> cửa hàng</span>
+                                <span>0333814222</span>
                             </a>
 
                         </div>

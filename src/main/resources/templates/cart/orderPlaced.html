@@ -77,12 +77,45 @@
                     </thead>
                     <tbody>
 
-                    <tr th:each="entry : ${parameters}">
 
-                        <td th:text="${entry.key} + '  : -  ' + ${entry.value}"></td>
+                    <tr class="cart__row table__section" th:each="item, iStat : ${cart}">
+                        <td data-label="Sản phẩm">
+                            <a th:href="@{/shop/viewproduct/{id}(id=${item.id})}" class="cart__image">
+                                <img th:src="@{${'/productImages/' + item.imageName}}" th:alt="${item.name}">
+                            </a>
+                        </td>
+                        <td>
+                            <a th:href="@{/shop/viewproduct/{id}(id=${item.id})}" class="h4"  th:text="${item.name}">
+                                Name cake here
+                            </a>
 
+                            <br>
+                            <small th:text="${item.weight}">20 x 20 cm</small>
+                            <a  th:href="@{/cart/removeItem/{index}(index=${iStat.index})}"  class="cart__remove">
+                                <small>Xóa</small>
+                            </a>
+                        </td>
+                        <td data-label="Đơn giá">
+								<span class="h3"   th:text="${#numbers.formatCurrency(item.price)}" >
+									360,000₫
+								</span>
+                        </td>
+                        <td data-label="Số lượng">
+                            <input type="number" name="updates[]" id="updates_" data-id="" value="1" min="0"
+                                   onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                        </td>
+                        <td data-label="Tổng giá" class="text-right">
+
+								<span class="h3" th:text="${#numbers.formatCurrency(item.price)}">
+									360,000₫
+								</span>
+
+                        </td>
                     </tr>
-                    <h3>First Name: ${firstName}</h3>
+
+
+
+                    <h3 th:text="checkout.firstName">First Name:</h3>
                     </tbody>
                 </table>
             </div>

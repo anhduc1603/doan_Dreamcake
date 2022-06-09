@@ -18,7 +18,7 @@ public class Product {
     private Category category;
 
     private double price;
-    private double weight;
+    private String weight;
     private String description;
     private String imageName;
 }
