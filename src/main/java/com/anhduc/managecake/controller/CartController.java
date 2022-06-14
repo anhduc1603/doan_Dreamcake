@@ -3,6 +3,7 @@ package com.anhduc.managecake.controller;
 import com.anhduc.managecake.global.GlobalData;
 import com.anhduc.managecake.model.Checkout;
 import com.anhduc.managecake.model.Product;
+import com.anhduc.managecake.service.CheckoutService;
 import com.anhduc.managecake.service.ProductService;
 import com.anhduc.managecake.service.UserSerivce;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 @Controller
 public class CartController {
     @Autowired
@@ -20,6 +25,9 @@ public class CartController {
 
     @Autowired
     UserSerivce userSerivce;
+
+    @Autowired
+    CheckoutService checkoutService;
 
     @GetMapping("/addToCart/{id}")
     public String addToCart(@PathVariable int id){
@@ -47,12 +55,29 @@ public class CartController {
         model.addAttribute("checkout",checkout);
         model.addAttribute("cart",GlobalData.cart);
         model.addAttribute("total",GlobalData.cart.stream().mapToDouble(Product::getPrice).sum());
-        return "cart/checkout";
+
+        return "cart/checkout2";
     }
 
     @PostMapping ("/receipt")
     public String receipt(@ModelAttribute("checkout") Checkout checkout, Model model){
-        System.out.println(checkout);
+
+        Checkout c = new Checkout();
+        c.setFullName(checkout.getFullName());
+        c.setPhone(checkout.getPhone());
+        c.setAddress(checkout.getAddress());
+        c.setCity(checkout.getCity());
+        c.setEmail(checkout.getEmail());
+        c.setDistrict(checkout.getDistrict());
+        c.setNote(checkout.getNote());
+
+        SimpleDateFormat sdf = new SimpleDateFormat ("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
+        String today = sdf.format(new Date());
+        System.out.println(today);
+        c.setDatetime(today);
+
+        System.out.println(c);
+        checkoutService.addCheckout(c);
         model.addAttribute("cart",GlobalData.cart);
         return "/cart/orderPlaced";
     }

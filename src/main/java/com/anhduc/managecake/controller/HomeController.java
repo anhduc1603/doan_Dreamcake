@@ -37,6 +37,8 @@ public class HomeController {
         model.addAttribute("categories",categoryService.getAllCategory());
         model.addAttribute("cartCount", GlobalData.cart.size());
         model.addAttribute("products",productService.getAllProduct());
+        String contex =  SecurityContextHolder.getContext().getAuthentication().getName();
+        model.addAttribute("user",contex);
         return "index";
     }
 
@@ -56,6 +58,8 @@ public class HomeController {
         model.addAttribute("categories",categoryService.getAllCategory());
         model.addAttribute("cartCount",GlobalData.cart.size());
         model.addAttribute("products",productService.getAllProductCategoryId(id));
+        String contex =  SecurityContextHolder.getContext().getAuthentication().getName();
+        model.addAttribute("user",contex);
         return "home/listdetail";
     }
 
@@ -64,6 +68,8 @@ public class HomeController {
         model.addAttribute("categories",categoryService.getAllCategory());
         model.addAttribute("product",productService.getProductById(id).get());
         model.addAttribute("cartCount",GlobalData.cart.size());
+        String contex =  SecurityContextHolder.getContext().getAuthentication().getName();
+        model.addAttribute("user",contex);
         return "/home/detail";
 
     }
@@ -73,12 +79,16 @@ public class HomeController {
         model.addAttribute("categories",categoryService.getAllCategory());
         model.addAttribute("product",productService.getProductById(id).get());
         model.addAttribute("cartCount",GlobalData.cart.size());
+        String contex =  SecurityContextHolder.getContext().getAuthentication().getName();
+        model.addAttribute("user",contex);
         return "/home/viewProduct";
 
     }
 
     @GetMapping("/product/search")
     public String searchProductByName(@RequestParam(name = "name",required = true) String name, Model model){
+        String contex =  SecurityContextHolder.getContext().getAuthentication().getName();
+        model.addAttribute("user",contex);
         List<Product> list= null;
         if(StringUtils.hasText(name)){
             list = productService.getAllProductByName(name);
