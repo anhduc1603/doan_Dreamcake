@@ -41,60 +41,68 @@
 
                 <form th:object="${checkout}"  method="post"  th:action="@{/receipt}"  >
 
-                    <div class="cardholder-name">
-                        <label for="cardholder-name" class="label-default">Họ và tên</label>
-                        <input type="text" name="cardholder-name" id="cardholder-name"
-                               class="input-default " th:field="*{fullName}">
+                    <div >
+                        <div>
+                            <div class="cardholder-name">
+                                <label for="cardholder-name" class="label-default">Họ và tên</label>
+                                <input type="text" name="cardholder-name" id="cardholder-name"
+                                       class="input-default " th:field="*{fullName}">
+                            </div>
+
+                            <div class="cardholder-name">
+                                <label for="cardholder-name" class="label-default">Số điện thoại</label>
+                                <input type="text" name="cardholder-name" id="phone"
+                                       class="input-default " th:field="*{phone}">
+                            </div>
+
+
+                            <div class="cardholder-name">
+                                <label for="cardholder-name" class="label-default">Email</label>
+                                <input type="text" name="cardholder-name" id="email"
+                                       class="input-default " th:field="*{email}">
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="cardholder-name">
+                                <label for="cardholder-name" class="label-default">Tỉnh - Thành Phố</label>
+                                <input type="text" name="cardholder-name" id="city"
+                                       class="input-default " th:field="*{city}">
+                            </div>
+
+                            <div class="cardholder-name">
+                                <label for="cardholder-name" class="label-default">Quận- Huyện</label>
+                                <input type="text" name="cardholder-name" id="district"
+                                       class="input-default " th:field="*{district}">
+                            </div>
+
+                            <div class="cardholder-name">
+                                <label for="cardholder-name" class="label-default">Phường Xã</label>
+                                <input type="text" name="cardholder-name" id="address"
+                                       class="input-default " th:field="*{address}">
+                            </div>
+
+                            <div class="cardholder-name">
+                                <label for="cardholder-name" class="label-default">Ghi chú</label>
+                                <input type="text" name="cardholder-name" id="note"
+                                       class="input-default " th:field="*{note}">
+                            </div>
+                        </div>
+
                     </div>
-
-                    <div class="cardholder-name">
-                        <label for="cardholder-name" class="label-default">Số điện thoại</label>
-                        <input type="text" name="cardholder-name" id="phone"
-                               class="input-default " th:field="*{phone}">
+                    <div>
+                        <button class="btn btn-primary" type="submit" >
+                            <b>Pay</b>
+                            <span id="payAmount" th:text="${#numbers.formatCurrency(total)}" >2.15</span>
+                        </button>
                     </div>
-
-
-                    <div class="cardholder-name">
-                        <label for="cardholder-name" class="label-default">Email</label>
-                        <input type="text" name="cardholder-name" id="email"
-                               class="input-default " th:field="*{email}">
-                    </div>
-
-                    <div class="cardholder-name">
-                        <label for="cardholder-name" class="label-default">Tỉnh - Thành Phố</label>
-                        <input type="text" name="cardholder-name" id="city"
-                               class="input-default " th:field="*{city}">
-                    </div>
-
-                    <div class="cardholder-name">
-                        <label for="cardholder-name" class="label-default">Quận- Huyện</label>
-                        <input type="text" name="cardholder-name" id="district"
-                               class="input-default " th:field="*{district}">
-                    </div>
-
-                    <div class="cardholder-name">
-                        <label for="cardholder-name" class="label-default">Phường Xã</label>
-                        <input type="text" name="cardholder-name" id="address"
-                               class="input-default " th:field="*{address}">
-                    </div>
-
-                    <div class="cardholder-name">
-                        <label for="cardholder-name" class="label-default">Ghi chú</label>
-                        <input type="text" name="cardholder-name" id="note"
-                               class="input-default " th:field="*{note}">
-                    </div>
-
-                    <button class="btn btn-primary" type="submit" >
-                        <b>Pay</b>
-                        <span id="payAmount" th:text="${#numbers.formatCurrency(total)}" >2.15</span>
-                    </button>
 
                 </form>
 
             </div>
 
-
         </section>
+
 
 
         <!--

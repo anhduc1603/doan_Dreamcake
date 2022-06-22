@@ -31,13 +31,22 @@ public class AdminController {
 
     @GetMapping("/admin")
     public String adminHome(){
-        return "/admin/adminHome";
+        return "admin/indexAdmin";
     }
 
+    @GetMapping("/test")
+    public String test(){
+        return "admin/pageMau";
+    }
+
+    @GetMapping("admin/table")
+    public String getTable(){
+        return "admin/table";
+    }
     @GetMapping("admin/categories")
     public String getCat(Model model){
         model.addAttribute("categories",categoryService.getAllCategory());
-       return "/admin/categories/categories";
+       return "/admin/categories/categories1";
     }
 
 
@@ -71,17 +80,23 @@ public class AdminController {
     }
 
     //Product Section
+//    @GetMapping("admin/products")
+//    public String products(Model model){
+//            model.addAttribute("products" ,productService.getAllProduct() );
+//            return "/admin/product/products";
+//    }
+
     @GetMapping("admin/products")
     public String products(Model model){
-            model.addAttribute("products" ,productService.getAllProduct() );
-            return "/admin/product/products";
+        model.addAttribute("products" ,productService.getAllProduct() );
+        return "/admin/product/products1";
     }
 
     @GetMapping("admin/products/add")
     public String productAddGet(Model model){
         model.addAttribute("productDTO" ,new ProductDTO());
         model.addAttribute("categories",categoryService.getAllCategory());
-        return "/admin/product/productsAdd";
+        return "/admin/product/productsAdd1";
     }
 
 
@@ -134,6 +149,6 @@ public class AdminController {
         model.addAttribute("categories",categoryService.getAllCategory());
         model.addAttribute("productDTO",productDTO);
 
-        return "admin/product/productsAdd";
+        return "categoriesAdd1";
     }
 }

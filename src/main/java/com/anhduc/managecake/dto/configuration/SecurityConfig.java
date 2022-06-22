@@ -1,5 +1,5 @@
 
-package com.anhduc.managecake.configuration;
+package com.anhduc.managecake.dto.configuration;
 
 
 import com.anhduc.managecake.service.CustomUserDetailLService;
@@ -29,7 +29,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/","/home","/shop/**","/forgotpassword","/register","/h2-console/**","/product/search")
                 .permitAll()
-                .antMatchers("/admin/**").hasRole("ADMIN")
+                .antMatchers("/admin/**","admin/**").hasRole("ADMIN")
                 .anyRequest()
                 .authenticated()
                 .and()
@@ -73,7 +73,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers("/resources/**","/static/**","/images/**","/productImages/**",
-                "/css/**","/js/**","/static/fonts/**");
+                "/css/**","/js/**","/static/fonts/**","/static/admin/**","/static/admin/styles/**");
     }
 }
 

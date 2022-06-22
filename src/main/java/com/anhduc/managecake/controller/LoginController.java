@@ -39,20 +39,6 @@ public class LoginController {
         return "/account/login";
     }
 
-    @PostMapping("/loginuser")
-    public String authWithHttpServletRequest(HttpServletRequest request,@ModelAttribute("user") User user) {
-        System.out.println("Authentication User");
-        try {
-            System.out.println(user.getEmail() + user.getPassword());
-            request.login(user.getEmail(), user.getPassword());
-            return "redirect:/shop";
-
-        } catch (ServletException e) {
-            System.out.println(e.getMessage());
-        }
-        return "redirect:/shop";
-    }
-
 
     @GetMapping("/register")
     public String registerGet(){

@@ -2661,7 +2661,7 @@ remaining accessible to screen readers (h5bp.com)
 
 .cart-table td,
 .cart-table th {
-  padding: 30px 15px;
+  padding: 10px 15px;
   border: none; }
 
 @media screen and (min-width: 769px) {
@@ -2693,6 +2693,7 @@ remaining accessible to screen readers (h5bp.com)
       display: none; } }
 
 .cart__remove {
+  font-size: 20px;
   display: block; }
 
 /*============================================================================

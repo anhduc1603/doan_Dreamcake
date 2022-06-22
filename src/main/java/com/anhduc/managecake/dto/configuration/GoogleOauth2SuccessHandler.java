@@ -1,4 +1,4 @@
-package com.anhduc.managecake.configuration;
+package com.anhduc.managecake.dto.configuration;
 
 import com.anhduc.managecake.model.Role;
 import com.anhduc.managecake.model.User;

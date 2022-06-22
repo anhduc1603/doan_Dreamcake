@@ -67,10 +67,11 @@
                             </thead>
                             <tbody>
 
-                            <tr class="cart__row table__section" th:each="item, iStat : ${cart}">
-                                <td data-label="Sản phẩm">
+                            <tr class="cart__row table__section" th:each="item, iStat : ${cart}" height="160px">
+                                <td data-label="Sản phẩm" height="130px" cellpadding="0">
                                     <a th:href="@{/shop/viewproduct/{id}(id=${item.id})}" class="cart__image">
-                                        <img th:src="@{${'/productImages/' + item.imageName}}" th:alt="${item.name}">
+                                        <img th:src="@{${'/productImages/' + item.imageName}}" th:alt="${item.name}"
+                                             width="130px" height="130px">
                                     </a>
                                 </td>
                                 <td>
