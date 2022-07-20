@@ -39,16 +39,18 @@ public class AdminController {
         return "admin/pageMau";
     }
 
-    @GetMapping("admin/table")
-    public String getTable(){
-        return "admin/table";
-    }
+
     @GetMapping("admin/categories")
     public String getCat(Model model){
         model.addAttribute("categories",categoryService.getAllCategory());
        return "/admin/categories/categories1";
     }
 
+    @GetMapping("admin/categori")
+    public String getCata(Model model){
+        model.addAttribute("categories",categoryService.getAllCategory());
+        return "/admin/categories/categories";
+    }
 
     @GetMapping("admin/categories/add")
     public String getCatAdd(Model model){
@@ -149,6 +151,6 @@ public class AdminController {
         model.addAttribute("categories",categoryService.getAllCategory());
         model.addAttribute("productDTO",productDTO);
 
-        return "categoriesAdd1";
+        return "admin/product/productsAdd1";
     }
 }

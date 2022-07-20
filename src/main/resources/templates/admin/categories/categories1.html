@@ -48,7 +48,6 @@
             <h5 class="my-2">Help us Grow</h5>
             <div class="inner-wrapper">
                 <a class="github-button" href="https://github.com/DesignRevision/shards-dashboard" data-icon="octicon-star" data-show-count="true" aria-label="Star DesignRevision/shards-dashboard on GitHub">Star</a>
-                <!-- <iframe style="width: 91px; height: 21px;"src="https://yvoschaap.com/producthunt/counter.html#href=https%3A%2F%2Fwww.producthunt.com%2Fr%2Fp%2F112998&layout=wide" width="56" height="65" scrolling="no" frameborder="0" allowtransparency="true"></iframe> -->
             </div>
         </div>
         <div id="social-share" data-url="https://designrevision.com/downloads/shards-dashboard-lite/" data-text="🔥 Check out Shards Dashboard Lite, a free and beautiful Bootstrap 4 admin dashboard template!" data-title="share"></div>
@@ -78,8 +77,7 @@
                     <!-- Page Header -->
                     <div class="page-header row no-gutters py-4">
                         <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
-                            <span class="text-uppercase page-subtitle">Dashboard</span>
-                            <h3 class="page-title">Blog Overview</h3>
+                            <h3 class="page-title">Danh mục sản phẩm</h3>
                         </div>
                     </div>
                     <!-- End Page Header -->
@@ -88,7 +86,7 @@
                         <div class="col">
                             <div class="card card-small mb-4">
                                 <div class="card-header border-bottom">
-                                    <h6 class="m-0">Active Users</h6>
+                                    <a th:href="@{/admin/categories/add}"  class="btn btn-primary">Add Category</a>
                                 </div>
                                 <div class="card-body p-0 pb-3 text-center">
                                     <table class="table mb-0">
